@@ -54,7 +54,7 @@ public class LoginMedico extends javax.swing.JInternalFrame {
         IniciarSesion.setForeground(new java.awt.Color(48, 44, 44));
         IniciarSesion.setText("INICIAR");
 
-        logoMedico.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Documents\\MediMeetup\\src\\main\\java\\Resource\\logoMedico.png")); // NOI18N
+        logoMedico.setIcon(new javax.swing.ImageIcon("C:\\Users\\user\\Documents\\MediMeetup\\src\\main\\java\\Resource\\logoMedico.png")); // NOI18N
 
         NombreUsuario.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         NombreUsuario.setText("Nombre de Usuario: ");
@@ -143,7 +143,7 @@ public class LoginMedico extends javax.swing.JInternalFrame {
                 .addComponent(IniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(IniciarSesion1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(NombreUsuario)
                 .addGap(29, 29, 29)
                 .addGroup(escritorioLMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
