@@ -58,9 +58,9 @@ public class LoginPaciente extends javax.swing.JInternalFrame {
         });
 
         txtCedulaPaciente.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-        txtCedulaPaciente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCedulaPacienteActionPerformed(evt);
+        txtCedulaPaciente.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtCedulaPacienteKeyPressed(evt);
             }
         });
 
@@ -140,8 +140,12 @@ public class LoginPaciente extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtCedulaPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCedulaPacienteActionPerformed
-    String cedula = txtCedulaPaciente.getText();
+    private void btnAccederActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccederActionPerformed
+        
+    }//GEN-LAST:event_btnAccederActionPerformed
+
+    private void txtCedulaPacienteKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCedulaPacienteKeyPressed
+        String cedula = txtCedulaPaciente.getText();
     
     String validarCedula = "^[0-9]{10}$";
     
@@ -151,14 +155,9 @@ public class LoginPaciente extends javax.swing.JInternalFrame {
         } else {
             CheckCedula.setForeground(Color.RED);
             CheckCedula.setText("✘");
-        }
+        }        
         
-        
-    }//GEN-LAST:event_txtCedulaPacienteActionPerformed
-
-    private void btnAccederActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccederActionPerformed
-        
-    }//GEN-LAST:event_btnAccederActionPerformed
+    }//GEN-LAST:event_txtCedulaPacienteKeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

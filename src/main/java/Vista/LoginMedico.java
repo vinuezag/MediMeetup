@@ -60,9 +60,9 @@ public class LoginMedico extends javax.swing.JInternalFrame {
         NombreUsuario.setText("Nombre de Usuario: ");
 
         txtUsuario.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-        txtUsuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUsuarioActionPerformed(evt);
+        txtUsuario.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtUsuarioKeyPressed(evt);
             }
         });
 
@@ -70,15 +70,20 @@ public class LoginMedico extends javax.swing.JInternalFrame {
         Contrasenia.setText("Constraseña: ");
 
         txtClave.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-        txtClave.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtClaveActionPerformed(evt);
+        txtClave.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtClaveKeyPressed(evt);
             }
         });
 
         btnAcceder.setBackground(new java.awt.Color(0, 182, 0));
         btnAcceder.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         btnAcceder.setText("Acceder");
+        btnAcceder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAccederActionPerformed(evt);
+            }
+        });
 
         btnRecuperarClave.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         btnRecuperarClave.setForeground(new java.awt.Color(0, 51, 153));
@@ -181,7 +186,12 @@ public class LoginMedico extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed
+    private void btnAccederActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccederActionPerformed
+        
+        
+    }//GEN-LAST:event_btnAccederActionPerformed
+
+    private void txtUsuarioKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUsuarioKeyPressed
         String user = txtUsuario.getText();
         String validarNombre = "^[A-Za-zÁ-ÿ\\s'-]+$";    
         
@@ -192,11 +202,9 @@ public class LoginMedico extends javax.swing.JInternalFrame {
             CheckUser.setForeground(Color.RED);
             CheckUser.setText("✘");
         }
-        
-    }//GEN-LAST:event_txtUsuarioActionPerformed
+    }//GEN-LAST:event_txtUsuarioKeyPressed
 
-    private void txtClaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtClaveActionPerformed
-
+    private void txtClaveKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtClaveKeyPressed
         String password = txtClave.getText();
         String validarPassword = "^(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{5,}$";
     
@@ -207,7 +215,8 @@ public class LoginMedico extends javax.swing.JInternalFrame {
             CheckClave.setForeground(Color.RED);
             CheckClave.setText("✘");
         }
-    }//GEN-LAST:event_txtClaveActionPerformed
+
+    }//GEN-LAST:event_txtClaveKeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

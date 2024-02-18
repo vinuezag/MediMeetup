@@ -39,21 +39,17 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         escritorio.setBackground(new java.awt.Color(255, 255, 255));
 
-        btnMedico.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Documents\\MediMeetup\\src\\main\\java\\Resource\\UserDoctor.png")); // NOI18N
         btnMedico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMedicoActionPerformed(evt);
             }
         });
 
-        btnPaciente.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Documents\\MediMeetup\\src\\main\\java\\Resource\\UserPaciente.png")); // NOI18N
         btnPaciente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPacienteActionPerformed(evt);
             }
         });
-
-        logoSistema.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Documents\\MediMeetup\\src\\main\\java\\Resource\\nombreSistem.png")); // NOI18N
 
         escritorio.setLayer(btnMedico, javax.swing.JLayeredPane.DEFAULT_LAYER);
         escritorio.setLayer(btnPaciente, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -79,10 +75,10 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             .addGroup(escritorioLayout.createSequentialGroup()
                 .addGap(63, 63, 63)
                 .addComponent(logoSistema, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(92, 92, 92)
-                .addGroup(escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnMedico)
-                    .addComponent(btnPaciente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnMedico, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(71, 71, 71))
         );
 
