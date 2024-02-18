@@ -192,11 +192,18 @@ public class MenuMedico extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnAgendarCitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgendarCitaActionPerformed
-        AgendarCita ventanaAC = new AgendarCita();
-        escritorio.add(ventanaAC);
-        ventanaAC.show();
-    }//GEN-LAST:event_btnAgendarCitaActionPerformed
+    private void btnSalidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalidaActionPerformed
+        // TODO add your handling code here:
+        PantallaPrincipal ventanaPI = new PantallaPrincipal();
+        escritorio.add(ventanaPI);
+        ventanaPI.show();
+    }//GEN-LAST:event_btnSalidaActionPerformed
+
+    private void btnReagendarCitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReagendarCitaActionPerformed
+        ReagendarCita ventanaRC = new ReagendarCita();
+        escritorio.add(ventanaRC);
+        ventanaRC.show();
+    }//GEN-LAST:event_btnReagendarCitaActionPerformed
 
     private void btnBuscarCitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarCitaActionPerformed
         // TODO add your handling code here:
@@ -205,18 +212,11 @@ public class MenuMedico extends javax.swing.JInternalFrame {
         ventanaBC.show();
     }//GEN-LAST:event_btnBuscarCitaActionPerformed
 
-    private void btnReagendarCitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReagendarCitaActionPerformed
-        ReagendarCita ventanaRC = new ReagendarCita();
-        escritorio.add(ventanaRC);
-        ventanaRC.show();
-    }//GEN-LAST:event_btnReagendarCitaActionPerformed
-
-    private void btnSalidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalidaActionPerformed
-        // TODO add your handling code here:
-        PantallaPrincipal ventanaPI = new PantallaPrincipal();
-        escritorio.add(ventanaPI);
-        ventanaPI.show();
-    }//GEN-LAST:event_btnSalidaActionPerformed
+    private void btnAgendarCitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgendarCitaActionPerformed
+        AgendarCita ventanaAC = new AgendarCita();
+        escritorio.add(ventanaAC);
+        ventanaAC.show();
+    }//GEN-LAST:event_btnAgendarCitaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
