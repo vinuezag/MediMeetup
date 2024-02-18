@@ -4,6 +4,7 @@
  */
 package Vista;
 
+import static Vista.PantallaPrincipal.escritorio;
 import java.awt.Color;
 
 /**
@@ -17,6 +18,9 @@ public class LoginMedico extends javax.swing.JInternalFrame {
      */
     public LoginMedico() {
         initComponents();
+        
+        LogoMedico.setBorder(null);
+        LogoMedico.setBackground(new Color(0,0,0,0));
     }
 
     /**
@@ -40,6 +44,7 @@ public class LoginMedico extends javax.swing.JInternalFrame {
         IniciarSesion1 = new javax.swing.JLabel();
         CheckUser = new javax.swing.JLabel();
         CheckClave = new javax.swing.JLabel();
+        LogoMedico = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setClosable(true);
@@ -53,8 +58,6 @@ public class LoginMedico extends javax.swing.JInternalFrame {
         IniciarSesion.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         IniciarSesion.setForeground(new java.awt.Color(48, 44, 44));
         IniciarSesion.setText("INICIAR");
-
-        logoMedico.setIcon(new javax.swing.ImageIcon("C:\\Users\\user\\Documents\\MediMeetup\\src\\main\\java\\Resource\\logoMedico.png")); // NOI18N
 
         NombreUsuario.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         NombreUsuario.setText("Nombre de Usuario: ");
@@ -89,10 +92,17 @@ public class LoginMedico extends javax.swing.JInternalFrame {
         btnRecuperarClave.setForeground(new java.awt.Color(0, 51, 153));
         btnRecuperarClave.setText("¿Olvidaste la Contraseña?");
         btnRecuperarClave.setBorder(null);
+        btnRecuperarClave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRecuperarClaveActionPerformed(evt);
+            }
+        });
 
         IniciarSesion1.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         IniciarSesion1.setForeground(new java.awt.Color(0, 91, 122));
         IniciarSesion1.setText("SESION");
+
+        LogoMedico.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Documents\\MediMeetup\\src\\main\\resource\\Imagenes\\96.Medico.jpeg")); // NOI18N
 
         javax.swing.GroupLayout escritorioLMLayout = new javax.swing.GroupLayout(escritorioLM);
         escritorioLM.setLayout(escritorioLMLayout);
@@ -107,25 +117,11 @@ public class LoginMedico extends javax.swing.JInternalFrame {
                         .addGap(245, 245, 245)
                         .addComponent(Contrasenia)))
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, escritorioLMLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(escritorioLMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, escritorioLMLayout.createSequentialGroup()
-                        .addComponent(logoMedico)
-                        .addGap(207, 207, 207))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, escritorioLMLayout.createSequentialGroup()
-                        .addGroup(escritorioLMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(IniciarSesion1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(IniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(229, 229, 229))))
             .addGroup(escritorioLMLayout.createSequentialGroup()
                 .addGroup(escritorioLMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(escritorioLMLayout.createSequentialGroup()
                         .addGap(240, 240, 240)
                         .addComponent(btnAcceder))
-                    .addGroup(escritorioLMLayout.createSequentialGroup()
-                        .addGap(225, 225, 225)
-                        .addComponent(NombreUsuario))
                     .addGroup(escritorioLMLayout.createSequentialGroup()
                         .addGap(149, 149, 149)
                         .addGroup(escritorioLMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -136,19 +132,37 @@ public class LoginMedico extends javax.swing.JInternalFrame {
                             .addGroup(escritorioLMLayout.createSequentialGroup()
                                 .addComponent(txtClave, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(CheckClave, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(81, Short.MAX_VALUE))
+                                .addComponent(CheckClave, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(escritorioLMLayout.createSequentialGroup()
+                        .addGap(225, 225, 225)
+                        .addComponent(NombreUsuario)))
+                .addGap(81, 81, 81))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, escritorioLMLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(escritorioLMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(LogoMedico)
+                    .addGroup(escritorioLMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(escritorioLMLayout.createSequentialGroup()
+                            .addComponent(logoMedico)
+                            .addGap(207, 207, 207))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, escritorioLMLayout.createSequentialGroup()
+                            .addGroup(escritorioLMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(IniciarSesion1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(IniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(225, 225, 225)))))
         );
         escritorioLMLayout.setVerticalGroup(
             escritorioLMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(escritorioLMLayout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addComponent(logoMedico)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(LogoMedico)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(IniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(IniciarSesion1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(NombreUsuario)
                 .addGap(29, 29, 29)
                 .addGroup(escritorioLMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -171,29 +185,32 @@ public class LoginMedico extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(327, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(71, 71, 71)
                 .addComponent(escritorioLM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(167, 167, 167))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(escritorioLM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(32, Short.MAX_VALUE)
+                .addComponent(escritorioLM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAccederActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccederActionPerformed
-        
+        MenuMedico ventanaMM = new MenuMedico();
+        escritorio.add(ventanaMM);
+        ventanaMM.show(); 
         
     }//GEN-LAST:event_btnAccederActionPerformed
 
     private void txtUsuarioKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUsuarioKeyPressed
         String user = txtUsuario.getText();
-        String validarNombre = "^[A-Za-zÁ-ÿ\\s'-]+$";    
+        String validarNombre = "^[0-9]{10}$";    
         
         if (user.matches(validarNombre)) {
             CheckUser.setForeground(Color.GREEN);
@@ -206,7 +223,7 @@ public class LoginMedico extends javax.swing.JInternalFrame {
 
     private void txtClaveKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtClaveKeyPressed
         String password = txtClave.getText();
-        String validarPassword = "^(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{5,}$";
+        String validarPassword = "^[A-Z]\\d{3}$";
     
         if (password.matches(validarPassword)) {
             CheckClave.setForeground(Color.GREEN);
@@ -218,6 +235,12 @@ public class LoginMedico extends javax.swing.JInternalFrame {
 
     }//GEN-LAST:event_txtClaveKeyPressed
 
+    private void btnRecuperarClaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecuperarClaveActionPerformed
+        
+        
+        
+    }//GEN-LAST:event_btnRecuperarClaveActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CheckClave;
@@ -225,6 +248,7 @@ public class LoginMedico extends javax.swing.JInternalFrame {
     private javax.swing.JLabel Contrasenia;
     private javax.swing.JLabel IniciarSesion;
     private javax.swing.JLabel IniciarSesion1;
+    private javax.swing.JLabel LogoMedico;
     private javax.swing.JLabel NombreUsuario;
     private javax.swing.JButton btnAcceder;
     private javax.swing.JButton btnRecuperarClave;

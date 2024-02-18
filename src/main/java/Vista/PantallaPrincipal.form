@@ -83,19 +83,13 @@
         <Component class="javax.swing.JButton" name="btnMedico">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Sylfaen" size="18" style="3"/>
+              <Font name="Trebuchet MS" size="18" style="1"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\user\Documents\MediMeetup\src\main\java\Resource\96.Medico.png"/>
+              <Image iconType="2" name="C:\Users\USUARIO\Documents\MediMeetup\src\main\resource\Imagenes\128.Medico.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="MEDICO"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
-            <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\user\Documents\MediMeetup\src\main\java\Resource\128.Medico.png"/>
-            </Property>
-            <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\user\Documents\MediMeetup\src\main\java\Resource\128.Medico.png"/>
-            </Property>
             <Property name="verticalTextPosition" type="int" value="1"/>
           </Properties>
           <Events>
@@ -105,19 +99,13 @@
         <Component class="javax.swing.JButton" name="btnPaciente">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI Symbol" size="18" style="3"/>
+              <Font name="Trebuchet MS" size="18" style="1"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\user\Documents\MediMeetup\src\main\java\Resource\Paciente.96.png"/>
+              <Image iconType="2" name="C:\Users\USUARIO\Documents\MediMeetup\src\main\resource\Imagenes\128.Paciente.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="PACIENTE"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
-            <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\user\Documents\MediMeetup\src\main\java\Resource\Paciente.128.png"/>
-            </Property>
-            <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\user\Documents\MediMeetup\src\main\java\Resource\Paciente.128.png"/>
-            </Property>
             <Property name="verticalTextPosition" type="int" value="1"/>
           </Properties>
           <Events>
@@ -127,7 +115,7 @@
         <Component class="javax.swing.JLabel" name="logoSistema">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\user\Documents\MediMeetup\src\main\java\Resource\nombreSistem.png"/>
+              <Image iconType="2" name="C:\Users\USUARIO\Documents\MediMeetup\src\main\resource\Imagenes\nombreSistem.png"/>
             </Property>
           </Properties>
         </Component>

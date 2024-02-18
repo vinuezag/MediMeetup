@@ -18,6 +18,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
      */
     public PantallaPrincipal() {
         initComponents();
+        
     }
     
 
@@ -39,12 +40,10 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         escritorio.setBackground(new java.awt.Color(255, 255, 255));
 
-        btnMedico.setFont(new java.awt.Font("Sylfaen", 3, 18)); // NOI18N
-        btnMedico.setIcon(new javax.swing.ImageIcon("C:\\Users\\user\\Documents\\MediMeetup\\src\\main\\java\\Resource\\96.Medico.png")); // NOI18N
+        btnMedico.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        btnMedico.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Documents\\MediMeetup\\src\\main\\resource\\Imagenes\\128.Medico.png")); // NOI18N
         btnMedico.setText("MEDICO");
         btnMedico.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnMedico.setPressedIcon(new javax.swing.ImageIcon("C:\\Users\\user\\Documents\\MediMeetup\\src\\main\\java\\Resource\\128.Medico.png")); // NOI18N
-        btnMedico.setRolloverIcon(new javax.swing.ImageIcon("C:\\Users\\user\\Documents\\MediMeetup\\src\\main\\java\\Resource\\128.Medico.png")); // NOI18N
         btnMedico.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         btnMedico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -52,12 +51,10 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        btnPaciente.setFont(new java.awt.Font("Segoe UI Symbol", 3, 18)); // NOI18N
-        btnPaciente.setIcon(new javax.swing.ImageIcon("C:\\Users\\user\\Documents\\MediMeetup\\src\\main\\java\\Resource\\Paciente.96.png")); // NOI18N
+        btnPaciente.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        btnPaciente.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Documents\\MediMeetup\\src\\main\\resource\\Imagenes\\128.Paciente.png")); // NOI18N
         btnPaciente.setText("PACIENTE");
         btnPaciente.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnPaciente.setPressedIcon(new javax.swing.ImageIcon("C:\\Users\\user\\Documents\\MediMeetup\\src\\main\\java\\Resource\\Paciente.128.png")); // NOI18N
-        btnPaciente.setRolloverIcon(new javax.swing.ImageIcon("C:\\Users\\user\\Documents\\MediMeetup\\src\\main\\java\\Resource\\Paciente.128.png")); // NOI18N
         btnPaciente.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         btnPaciente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -65,7 +62,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        logoSistema.setIcon(new javax.swing.ImageIcon("C:\\Users\\user\\Documents\\MediMeetup\\src\\main\\java\\Resource\\nombreSistem.png")); // NOI18N
+        logoSistema.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Documents\\MediMeetup\\src\\main\\resource\\Imagenes\\nombreSistem.png")); // NOI18N
 
         escritorio.setLayer(btnMedico, javax.swing.JLayeredPane.DEFAULT_LAYER);
         escritorio.setLayer(btnPaciente, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -162,6 +159,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new PantallaPrincipal().setVisible(true);
+                
             }
         });
     }
