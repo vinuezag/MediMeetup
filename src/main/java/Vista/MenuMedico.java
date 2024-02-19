@@ -41,15 +41,23 @@ public class MenuMedico extends javax.swing.JInternalFrame {
         menu = new javax.swing.JLabel();
         paciente = new javax.swing.JLabel();
 
+        javax.swing.GroupLayout pantallaLayout = new javax.swing.GroupLayout(pantalla);
+        pantalla.setLayout(pantallaLayout);
+        pantallaLayout.setHorizontalGroup(
+            pantallaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1105, Short.MAX_VALUE)
+        );
+        pantallaLayout.setVerticalGroup(
+            pantallaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 494, Short.MAX_VALUE)
+        );
+
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setAutoscrolls(true);
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Documents\\MediMeetup\\src\\main\\resource\\Imagenes\\400.Paciente.jpg")); // NOI18N
 
         btnAgendarCita.setBackground(new java.awt.Color(158, 226, 225));
         btnAgendarCita.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         btnAgendarCita.setForeground(new java.awt.Color(255, 255, 255));
-        btnAgendarCita.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Documents\\MediMeetup\\src\\main\\resource\\Imagenes\\210.AgendarCita.jpg")); // NOI18N
         btnAgendarCita.setText("Agendar Cita Medica");
         btnAgendarCita.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnAgendarCita.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
@@ -62,7 +70,6 @@ public class MenuMedico extends javax.swing.JInternalFrame {
         btnBuscarCita.setBackground(new java.awt.Color(158, 226, 225));
         btnBuscarCita.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         btnBuscarCita.setForeground(new java.awt.Color(255, 255, 255));
-        btnBuscarCita.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Documents\\MediMeetup\\src\\main\\resource\\Imagenes\\210.BuscarCita.jpg")); // NOI18N
         btnBuscarCita.setText("Consultar Cita Medica");
         btnBuscarCita.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnBuscarCita.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
@@ -75,7 +82,6 @@ public class MenuMedico extends javax.swing.JInternalFrame {
         btnReagendarCita.setBackground(new java.awt.Color(158, 226, 225));
         btnReagendarCita.setFont(new java.awt.Font("Trebuchet MS", 1, 16)); // NOI18N
         btnReagendarCita.setForeground(new java.awt.Color(255, 255, 255));
-        btnReagendarCita.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Documents\\MediMeetup\\src\\main\\resource\\Imagenes\\210.ModificarCita.jpg")); // NOI18N
         btnReagendarCita.setText("Reagendar Cita Medica");
         btnReagendarCita.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnReagendarCita.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
@@ -86,14 +92,11 @@ public class MenuMedico extends javax.swing.JInternalFrame {
         });
 
         btnSalida.setBackground(new java.awt.Color(255, 0, 0));
-        btnSalida.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Documents\\MediMeetup\\src\\main\\resource\\Imagenes\\48.Salir.png")); // NOI18N
         btnSalida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalidaActionPerformed(evt);
             }
         });
-
-        lblNombreCedula.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Documents\\MediMeetup\\src\\main\\resource\\Imagenes\\70.MenbreteM.jpg")); // NOI18N
 
         menu.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
         menu.setForeground(new java.awt.Color(48, 44, 44));
@@ -156,22 +159,6 @@ public class MenuMedico extends javax.swing.JInternalFrame {
                 .addGap(14, 14, 14))
         );
 
-        javax.swing.GroupLayout pantallaLayout = new javax.swing.GroupLayout(pantalla);
-        pantalla.setLayout(pantallaLayout);
-        pantallaLayout.setHorizontalGroup(
-            pantallaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pantallaLayout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        pantallaLayout.setVerticalGroup(
-            pantallaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pantallaLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -180,13 +167,17 @@ public class MenuMedico extends javax.swing.JInternalFrame {
                 .addGap(121, 121, 121)
                 .addComponent(pantalla, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(173, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(57, 57, 57)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pantalla, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(117, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();

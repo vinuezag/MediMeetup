@@ -4,8 +4,10 @@
  */
 package Vista;
 
+import Controlador.MedicoControlador;
 import static Vista.PantallaPrincipal.escritorio;
 import java.awt.Color;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -202,10 +204,15 @@ public class LoginMedico extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAccederActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccederActionPerformed
-        MenuMedico ventanaMM = new MenuMedico();
-        escritorio.add(ventanaMM);
-        ventanaMM.show(); 
-        
+        MedicoControlador mc=new MedicoControlador();
+        int estado=mc.verificarCredencialesMedico(txtUsuario.getText(), txtClave.getText());
+        if(estado!=0){
+           MenuMedico ventanaMM = new MenuMedico();
+           escritorio.add(ventanaMM);
+           ventanaMM.show(); 
+       }else{
+           JOptionPane.showMessageDialog(null, "Ingrese credenciales válidas");
+       }   
     }//GEN-LAST:event_btnAccederActionPerformed
 
     private void txtUsuarioKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUsuarioKeyPressed

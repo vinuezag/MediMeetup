@@ -250,11 +250,6 @@
         <Component class="javax.swing.JLabel" name="CheckClave">
         </Component>
         <Component class="javax.swing.JLabel" name="LogoMedico">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\USUARIO\Documents\MediMeetup\src\main\resource\Imagenes\96.Medico.jpeg"/>
-            </Property>
-          </Properties>
         </Component>
       </SubComponents>
     </Container>
