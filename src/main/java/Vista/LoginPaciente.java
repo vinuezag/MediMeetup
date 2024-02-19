@@ -4,8 +4,10 @@
  */
 package Vista;
 
+import Controlador.PacienteControlador;
 import static Vista.PantallaPrincipal.escritorio;
 import java.awt.Color;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -142,10 +144,20 @@ public class LoginPaciente extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAccederActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccederActionPerformed
-        MenuPaciente ventanaMP = new MenuPaciente();
-        escritorio.add(ventanaMP);
-        ventanaMP.show(); 
-        
+    PacienteControlador pa = new PacienteControlador();
+    int estado = pa.verificarPaciente(txtCedulaPaciente.getText());
+    if (estado != 0) {
+        IngresoPaciente ventanaI = new IngresoPaciente();
+        ventanaI.setVisible(true);
+        escritorio.add(ventanaI);
+        //MenuPaciente ventanaMP = new MenuPaciente();
+        //ventanaMP.setVisible(true);
+        //escritorio.add(ventanaMP); 
+    } else {
+       // IngresoPaciente ventanaI = new IngresoPaciente();
+        //ventanaI.setVisible(true);
+        //escritorio.add(ventanaI);
+      }             
     }//GEN-LAST:event_btnAccederActionPerformed
 
     private void txtCedulaPacienteKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCedulaPacienteKeyPressed

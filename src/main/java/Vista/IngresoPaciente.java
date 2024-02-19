@@ -4,6 +4,8 @@
  */
 package Vista;
 
+import Controlador.PacienteControlador;
+import Modelo.PacienteModelo;
 import static Vista.PantallaPrincipal.escritorio;
 import java.awt.Color;
 
@@ -54,7 +56,7 @@ public class IngresoPaciente extends javax.swing.JFrame {
         txtFechaN = new javax.swing.JTextField();
         txtDireccion = new javax.swing.JTextField();
         txtApellidos = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        ComTipoS = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtAlergias = new javax.swing.JTextArea();
         Masculino = new javax.swing.JCheckBox();
@@ -85,7 +87,6 @@ public class IngresoPaciente extends javax.swing.JFrame {
         paciente.setForeground(new java.awt.Color(51, 153, 255));
         paciente.setText("PACIENTE");
 
-        btnRegresar.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Documents\\MediMeetup\\src\\main\\resource\\Imagenes\\48.FlechaR.png")); // NOI18N
         btnRegresar.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         btnRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -93,9 +94,6 @@ public class IngresoPaciente extends javax.swing.JFrame {
             }
         });
 
-        LogoPaciente.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Documents\\MediMeetup\\src\\main\\resource\\Imagenes\\90.Paciente.jpg")); // NOI18N
-
-        btnSiguiente.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Documents\\MediMeetup\\src\\main\\resource\\Imagenes\\48.FlechaV.png")); // NOI18N
         btnSiguiente.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         btnSiguiente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -192,8 +190,8 @@ public class IngresoPaciente extends javax.swing.JFrame {
             }
         });
 
-        jComboBox1.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        ComTipoS.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        ComTipoS.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         txtAlergias.setBackground(new java.awt.Color(236, 236, 236));
         txtAlergias.setColumns(20);
@@ -293,7 +291,7 @@ public class IngresoPaciente extends javax.swing.JFrame {
                                         .addComponent(txtFechaN, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(CheckFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(ComTipoS, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel5)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(FechaNacimiento)
@@ -376,7 +374,7 @@ public class IngresoPaciente extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ComTipoS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -426,17 +424,28 @@ public class IngresoPaciente extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1277, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1265, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 791, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 779, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguienteActionPerformed
+        PacienteModelo pm=new PacienteModelo(0, txtAlergias.getText(), txtMedicamentos.getText(), txtEnfermedades.getText(),
+                txtNombres.getText(), Integer.parseInt(txtCedula.getText()), txtApellidos.getText(), txtEmail.getText(), ERROR, ComTipoS.getSelectedItem().toString(),
+                txtFechaN.getText(), txtDireccion.getText(), (Masculino.isSelected() ? "Masculino" : "Femenino"));
+        PacienteControlador pc=new PacienteControlador();
+        pc.insertarPaciente(pm);
         MenuPaciente ventanaMP = new MenuPaciente();
         escritorio.add(ventanaMP);
         ventanaMP.show();
@@ -444,8 +453,8 @@ public class IngresoPaciente extends javax.swing.JFrame {
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
         PantallaPrincipal ventanaMP = new PantallaPrincipal();
-escritorio.add(ventanaMP);
-ventanaMP.setVisible(true);
+        escritorio.add(ventanaMP);
+        ventanaMP.setVisible(true);
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void txtNombresKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombresKeyPressed
@@ -586,6 +595,7 @@ ventanaMP.setVisible(true);
     private javax.swing.JLabel CheckEmail;
     private javax.swing.JLabel CheckFecha;
     private javax.swing.JLabel CheckName;
+    private javax.swing.JComboBox<String> ComTipoS;
     private javax.swing.JLabel Direccion;
     private javax.swing.JLabel Enfermedades;
     private javax.swing.JLabel FechaNacimiento;
@@ -600,7 +610,6 @@ ventanaMP.setVisible(true);
     private javax.swing.JLabel TipoSangre;
     private javax.swing.JButton btnRegresar;
     private javax.swing.JButton btnSiguiente;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
