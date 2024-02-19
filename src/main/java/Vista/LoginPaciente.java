@@ -145,17 +145,9 @@ public class LoginPaciente extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAccederActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccederActionPerformed
-        PacienteControlador pa=new PacienteControlador();
-       int estado=pa.verificarPaciente(txtCedulaPaciente.getText());
-       if(estado!=0){
            MenuPaciente ventanaMP = new MenuPaciente();
            escritorio.add(ventanaMP);
            ventanaMP.show(); 
-       }else{
-           JOptionPane.showMessageDialog(null, "Ingrese credenciales válidas");
-       }
-         
-        
     }//GEN-LAST:event_btnAccederActionPerformed
 
     private void txtCedulaPacienteKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCedulaPacienteKeyPressed
