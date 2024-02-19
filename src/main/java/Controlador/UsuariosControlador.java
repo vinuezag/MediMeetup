@@ -4,12 +4,14 @@
  */
 package Controlador;
 
+import Modelo.PersonaModelo;
 import Modelo.UsuarioModelo;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -60,5 +62,23 @@ public class UsuariosControlador {
             System.out.println("ERROR SQL");
         }
         return null;
+    }
+    //sp_ActualizarUsuario
+    public void insertarPersona(UsuarioModelo p) {
+        try {
+            String sql = "call sp_ActualizarUsuario('" + p.getUsuario()+ "','" + p.getClave()+ "','" + p.getPregunataseguridad()+ "');";
+            ejecutar = (PreparedStatement) conectar.prepareCall(sql);
+            var resultado = ejecutar.executeUpdate();
+            if (resultado > 0) {
+                JOptionPane.showMessageDialog(null, "Persona Creada con Éxito");
+                System.out.println("PERSONA CREADA CON ÉXITO");
+                ejecutar.close();
+            } else {
+                JOptionPane.showMessageDialog(null, "Revise los Datos ingresados");
+                System.out.println("REVISE LOS DATOS INGRESADOS");
+            }
+        } catch (SQLException e) {
+            System.out.println("ERROR SQL");
+        }
     }
 }
