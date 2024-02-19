@@ -307,15 +307,11 @@ public class ModificarMedico extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
-        PantallaPrincipal ventanaMP = new PantallaPrincipal();
-escritorio.add(ventanaMP);
-ventanaMP.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void btnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguienteActionPerformed
-        PantallaPrincipal ventanaMP = new PantallaPrincipal();
-escritorio.add(ventanaMP);
-ventanaMP.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnSiguienteActionPerformed
 
     private void txtCelularKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCelularKeyPressed

@@ -131,25 +131,37 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
     private void btnPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPacienteActionPerformed
 
-    LoginPaciente ventanaLP = new LoginPaciente();
+    try {
+        LoginPaciente ventanaLP = new LoginPaciente();
         escritorio.add(ventanaLP);
-        ventanaLP.show();
+        ventanaLP.setVisible(true);
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
         
     }//GEN-LAST:event_btnPacienteActionPerformed
 
     private void btnMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMedicoActionPerformed
 
-    LoginMedico ventanaLM = new LoginMedico();
+    try {
+        LoginMedico ventanaLM = new LoginMedico();
         escritorio.add(ventanaLM);
-        ventanaLM.show();        
+        ventanaLM.setVisible(true);
+    } catch (Exception e) {
+        e.printStackTrace();
+    }        
         
     }//GEN-LAST:event_btnMedicoActionPerformed
 
     private void btnAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminActionPerformed
         // TODO add your handling code here:
+        try {
         LoginMedico ventanaLM = new LoginMedico();
         escritorio.add(ventanaLM);
-        ventanaLM.show();  
+        ventanaLM.setVisible(true);
+    } catch (Exception e) {
+        e.printStackTrace();
+    }  
     }//GEN-LAST:event_btnAdminActionPerformed
 
     /**

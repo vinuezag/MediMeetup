@@ -665,9 +665,7 @@ public class AgendarCita extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
-        MenuPaciente ventanaMP = new MenuPaciente();
-        escritorio.add(ventanaMP);
-        ventanaMP.show(); 
+        this.dispose(); 
         
     }//GEN-LAST:event_btnRegresarActionPerformed
 
@@ -681,9 +679,7 @@ public class AgendarCita extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_ConfirmarAgendaActionPerformed
 
     private void btnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguienteActionPerformed
-        MenuPaciente ventanaMP = new MenuPaciente();
-        escritorio.add(ventanaMP);
-        ventanaMP.show();        
+        this.dispose();       
     }//GEN-LAST:event_btnSiguienteActionPerformed
 
 

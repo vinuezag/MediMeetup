@@ -456,15 +456,11 @@ public class AgregarMedico extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
-        PantallaPrincipal ventanaMP = new PantallaPrincipal();
-escritorio.add(ventanaMP);
-ventanaMP.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void btnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguienteActionPerformed
-        MenuAdministrador ventanaMP = new MenuAdministrador();
-        escritorio.add(ventanaMP);
-        ventanaMP.show();
+        this.dispose();
     }//GEN-LAST:event_btnSiguienteActionPerformed
 
     private void txtNombresKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombresKeyPressed

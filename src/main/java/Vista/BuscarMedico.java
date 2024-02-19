@@ -37,7 +37,7 @@ public class BuscarMedico extends javax.swing.JInternalFrame {
         btnSiguiente = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        Eliminar = new javax.swing.JButton();
+        btnBuscar = new javax.swing.JButton();
         EspecialidadMedica = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
 
@@ -89,13 +89,13 @@ public class BuscarMedico extends javax.swing.JInternalFrame {
         ));
         jScrollPane2.setViewportView(jTable1);
 
-        Eliminar.setBackground(new java.awt.Color(0, 102, 255));
-        Eliminar.setFont(new java.awt.Font("Trebuchet MS", 1, 30)); // NOI18N
-        Eliminar.setText("Consultar");
-        Eliminar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 51, 153), 4, true));
-        Eliminar.addActionListener(new java.awt.event.ActionListener() {
+        btnBuscar.setBackground(new java.awt.Color(0, 102, 255));
+        btnBuscar.setFont(new java.awt.Font("Trebuchet MS", 1, 30)); // NOI18N
+        btnBuscar.setText("Consultar");
+        btnBuscar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 51, 153), 4, true));
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EliminarActionPerformed(evt);
+                btnBuscarActionPerformed(evt);
             }
         });
 
@@ -112,30 +112,31 @@ public class BuscarMedico extends javax.swing.JInternalFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(372, 372, 372)
-                .addComponent(Eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(226, 226, 226)
+                .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnSiguiente, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(221, 221, 221))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(118, 118, 118)
-                        .addComponent(lblComsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(103, 103, 103)
-                        .addComponent(LogoPaciente))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(118, 118, 118)
+                                .addComponent(lblComsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(103, 103, 103)
+                                .addComponent(LogoPaciente))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(95, 95, 95)
+                                .addComponent(PersonalMedico)))
+                        .addGap(151, 151, 151)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(EspecialidadMedica, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(95, 95, 95)
-                        .addComponent(PersonalMedico)))
-                .addGap(151, 151, 151)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(EspecialidadMedica, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(286, 1024, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(47, 47, 47)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 915, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(47, 47, 47)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 915, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(906, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -164,15 +165,18 @@ public class BuscarMedico extends javax.swing.JInternalFrame {
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(67, 67, 67)))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(btnSiguiente)
-                        .addGap(126, 126, 126))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(btnRegresar)
-                        .addGap(111, 111, 111))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(Eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(151, 151, 151))))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addComponent(btnSiguiente)
+                                .addGap(126, 126, 126))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addComponent(btnRegresar)
+                                .addGap(111, 111, 111))))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
 
         jScrollPane1.setViewportView(jPanel2);
@@ -198,32 +202,28 @@ public class BuscarMedico extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
-        MenuAdministrador ventanaMP = new MenuAdministrador();
-        escritorio.add(ventanaMP);
-        ventanaMP.show();
+        this.dispose();
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void btnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguienteActionPerformed
-        MenuAdministrador ventanaMP = new MenuAdministrador();
-        escritorio.add(ventanaMP);
-        ventanaMP.show();
+        this.dispose();
     }//GEN-LAST:event_btnSiguienteActionPerformed
 
-    private void EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarActionPerformed
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
 
         //MENSAJE DE CONFIRMACION
 
         MenuAdministrador ventanaMP = new MenuAdministrador();
         escritorio.add(ventanaMP);
         ventanaMP.show();
-    }//GEN-LAST:event_EliminarActionPerformed
+    }//GEN-LAST:event_btnBuscarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Eliminar;
     private javax.swing.JLabel EspecialidadMedica;
     private javax.swing.JLabel LogoPaciente;
     private javax.swing.JLabel PersonalMedico;
+    private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnRegresar;
     private javax.swing.JButton btnSiguiente;
     private javax.swing.JComboBox<String> jComboBox1;

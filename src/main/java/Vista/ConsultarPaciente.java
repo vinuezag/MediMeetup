@@ -296,15 +296,11 @@ public class ConsultarPaciente extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
-        MenuMedico ventanaMP = new MenuMedico();
-        escritorio.add(ventanaMP);
-        ventanaMP.show();
+        this.dispose();
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void btnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguienteActionPerformed
-        MenuMedico ventanaMP = new MenuMedico();
-        escritorio.add(ventanaMP);
-        ventanaMP.show();
+        this.dispose();
     }//GEN-LAST:event_btnSiguienteActionPerformed
 
 

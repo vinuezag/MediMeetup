@@ -54,6 +54,7 @@ public class ModificarInfoPacientes extends javax.swing.JInternalFrame {
         CheckEmail = new javax.swing.JLabel();
         CheckCel = new javax.swing.JLabel();
         CheckDic = new javax.swing.JLabel();
+        btnActualizar = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -149,6 +150,16 @@ public class ModificarInfoPacientes extends javax.swing.JInternalFrame {
         txtEnfermedades.setRows(5);
         jScrollPane4.setViewportView(txtEnfermedades);
 
+        btnActualizar.setBackground(new java.awt.Color(0, 153, 153));
+        btnActualizar.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
+        btnActualizar.setForeground(new java.awt.Color(255, 255, 255));
+        btnActualizar.setText("Actualizar");
+        btnActualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnActualizarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -187,10 +198,8 @@ public class ModificarInfoPacientes extends javax.swing.JInternalFrame {
                                         .addGap(0, 0, Short.MAX_VALUE)
                                         .addComponent(btnSiguiente, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(NumCecular)
-                                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 374, Short.MAX_VALUE)
+                                        .addComponent(NumCecular)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 620, Short.MAX_VALUE)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(Medicamentos)
@@ -198,7 +207,12 @@ public class ModificarInfoPacientes extends javax.swing.JInternalFrame {
                                             .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(CheckDic, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                                .addComponent(CheckDic, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(136, 136, 136)
+                                        .addComponent(btnActualizar)
+                                        .addGap(0, 0, Short.MAX_VALUE)))
                                 .addGap(132, 132, 132))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(28, 28, 28)
@@ -249,7 +263,9 @@ public class ModificarInfoPacientes extends javax.swing.JInternalFrame {
                         .addGap(18, 18, 18)
                         .addComponent(Enfermedades)
                         .addGap(4, 4, 4)
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnActualizar))
                         .addGap(18, 18, 18)
                         .addComponent(btnRegresar))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
@@ -280,15 +296,11 @@ public class ModificarInfoPacientes extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
-        PantallaPrincipal ventanaMP = new PantallaPrincipal();
-        escritorio.add(ventanaMP);
-        ventanaMP.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void btnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguienteActionPerformed
-        PantallaPrincipal ventanaMP = new PantallaPrincipal();
-            escritorio.add(ventanaMP);
-            ventanaMP.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnSiguienteActionPerformed
 
     private void txtCelularKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCelularKeyPressed
@@ -330,6 +342,10 @@ public class ModificarInfoPacientes extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_txtDireccionKeyPressed
 
+    private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
+
+    }//GEN-LAST:event_btnActualizarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Alergias;
@@ -342,6 +358,7 @@ public class ModificarInfoPacientes extends javax.swing.JInternalFrame {
     private javax.swing.JLabel LogoPaciente;
     private javax.swing.JLabel Medicamentos;
     private javax.swing.JLabel NumCecular;
+    private javax.swing.JButton btnActualizar;
     private javax.swing.JButton btnRegresar;
     private javax.swing.JButton btnSiguiente;
     private javax.swing.JLabel jLabel5;

@@ -189,15 +189,11 @@ public class EliminarMedico extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
-        MenuAdministrador ventanaMP = new MenuAdministrador();
-        escritorio.add(ventanaMP);
-        ventanaMP.show();
+        this.dispose();
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void btnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguienteActionPerformed
-        MenuAdministrador ventanaMP = new MenuAdministrador();
-        escritorio.add(ventanaMP);
-        ventanaMP.show();
+        this.dispose();
     }//GEN-LAST:event_btnSiguienteActionPerformed
 
     private void EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarActionPerformed

@@ -221,9 +221,7 @@ public class MenuAdministrador extends javax.swing.JInternalFrame {
 
     private void btnSalidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalidaActionPerformed
         // TODO add your handling code here:
-        PantallaPrincipal ventanaMP = new PantallaPrincipal();
-escritorio.add(ventanaMP);
-ventanaMP.setVisible(true);
+       this.dispose();
     }//GEN-LAST:event_btnSalidaActionPerformed
 
 

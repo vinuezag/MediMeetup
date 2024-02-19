@@ -71,6 +71,7 @@ public class IngresoPaciente extends javax.swing.JFrame {
         CheckFecha = new javax.swing.JLabel();
         CheckDic = new javax.swing.JLabel();
         FormatoFecha = new javax.swing.JLabel();
+        btnGuardar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -221,6 +222,16 @@ public class IngresoPaciente extends javax.swing.JFrame {
         FormatoFecha.setForeground(new java.awt.Color(204, 204, 204));
         FormatoFecha.setText("AÑO/MES/DIA");
 
+        btnGuardar.setBackground(new java.awt.Color(0, 153, 153));
+        btnGuardar.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
+        btnGuardar.setForeground(new java.awt.Color(255, 255, 255));
+        btnGuardar.setText("Guardar");
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -305,10 +316,13 @@ public class IngresoPaciente extends javax.swing.JFrame {
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                         .addComponent(Enfermedades)
                                         .addGap(111, 111, 111))
-                                    .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                        .addComponent(Direccion)
-                                        .addGap(132, 132, 132))))))
+                                    .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(btnGuardar)
+                                .addGap(264, 264, 264)
+                                .addComponent(Direccion)
+                                .addGap(132, 132, 132))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -399,7 +413,9 @@ public class IngresoPaciente extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addComponent(Direccion)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Direccion)
+                    .addComponent(btnGuardar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -417,7 +433,7 @@ public class IngresoPaciente extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(347, 347, 347)
                     .addComponent(CheckCel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(524, Short.MAX_VALUE)))
+                    .addContainerGap(552, Short.MAX_VALUE)))
         );
 
         jScrollPane2.setViewportView(jPanel1);
@@ -437,15 +453,11 @@ public class IngresoPaciente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguienteActionPerformed
-        MenuPaciente ventanaMP = new MenuPaciente();
-        escritorio.add(ventanaMP);
-        ventanaMP.show();
+        this.dispose();
     }//GEN-LAST:event_btnSiguienteActionPerformed
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
-        PantallaPrincipal ventanaMP = new PantallaPrincipal();
-escritorio.add(ventanaMP);
-ventanaMP.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void txtNombresKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombresKeyPressed
@@ -541,6 +553,10 @@ ventanaMP.setVisible(true);
         }
     }//GEN-LAST:event_txtDireccionKeyPressed
 
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+
+    }//GEN-LAST:event_btnGuardarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -598,6 +614,7 @@ ventanaMP.setVisible(true);
     private javax.swing.JLabel NombresPaciente;
     private javax.swing.JLabel NumCecular;
     private javax.swing.JLabel TipoSangre;
+    private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnRegresar;
     private javax.swing.JButton btnSiguiente;
     private javax.swing.JComboBox<String> jComboBox1;
