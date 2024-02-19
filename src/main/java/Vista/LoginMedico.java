@@ -246,9 +246,9 @@ public class LoginMedico extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtClaveKeyPressed
 
     private void btnRecuperarClaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecuperarClaveActionPerformed
-        
-        
-        
+        RecuperarClave ventanaRC = new RecuperarClave();
+        escritorio.add(ventanaRC);
+        ventanaRC.show(); 
     }//GEN-LAST:event_btnRecuperarClaveActionPerformed
 
 
