@@ -136,6 +136,7 @@ public class IngresoPaciente extends javax.swing.JFrame {
         Direccion.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Direccion.setText("Direccion");
 
+        txtNombres.setBackground(new java.awt.Color(236, 236, 236));
         txtNombres.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         txtNombres.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -143,6 +144,7 @@ public class IngresoPaciente extends javax.swing.JFrame {
             }
         });
 
+        txtCedula.setBackground(new java.awt.Color(236, 236, 236));
         txtCedula.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         txtCedula.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -150,6 +152,7 @@ public class IngresoPaciente extends javax.swing.JFrame {
             }
         });
 
+        txtCelular.setBackground(new java.awt.Color(236, 236, 236));
         txtCelular.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         txtCelular.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -157,6 +160,7 @@ public class IngresoPaciente extends javax.swing.JFrame {
             }
         });
 
+        txtEmail.setBackground(new java.awt.Color(236, 236, 236));
         txtEmail.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         txtEmail.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -164,6 +168,7 @@ public class IngresoPaciente extends javax.swing.JFrame {
             }
         });
 
+        txtFechaN.setBackground(new java.awt.Color(236, 236, 236));
         txtFechaN.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         txtFechaN.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -171,6 +176,7 @@ public class IngresoPaciente extends javax.swing.JFrame {
             }
         });
 
+        txtDireccion.setBackground(new java.awt.Color(236, 236, 236));
         txtDireccion.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         txtDireccion.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -178,6 +184,7 @@ public class IngresoPaciente extends javax.swing.JFrame {
             }
         });
 
+        txtApellidos.setBackground(new java.awt.Color(236, 236, 236));
         txtApellidos.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         txtApellidos.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -188,6 +195,7 @@ public class IngresoPaciente extends javax.swing.JFrame {
         jComboBox1.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
+        txtAlergias.setBackground(new java.awt.Color(236, 236, 236));
         txtAlergias.setColumns(20);
         txtAlergias.setRows(5);
         jScrollPane1.setViewportView(txtAlergias);
@@ -198,10 +206,12 @@ public class IngresoPaciente extends javax.swing.JFrame {
         Femenino.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         Femenino.setText("Femenino");
 
+        txtMedicamentos.setBackground(new java.awt.Color(236, 236, 236));
         txtMedicamentos.setColumns(20);
         txtMedicamentos.setRows(5);
         jScrollPane3.setViewportView(txtMedicamentos);
 
+        txtEnfermedades.setBackground(new java.awt.Color(236, 236, 236));
         txtEnfermedades.setColumns(20);
         txtEnfermedades.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
         txtEnfermedades.setRows(5);
@@ -331,9 +341,9 @@ public class IngresoPaciente extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(paciente, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(42, 42, 42)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NombresPaciente)
-                    .addComponent(Alergias))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Alergias, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(NombresPaciente))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()

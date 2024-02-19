@@ -754,7 +754,7 @@ public class ReagendarCita extends javax.swing.JInternalFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(paciente, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addComponent(lblNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -811,96 +811,53 @@ public class ReagendarCita extends javax.swing.JInternalFrame {
     private javax.swing.JButton FechaCita;
     private javax.swing.JButton Horario;
     private javax.swing.JButton Horario1;
-    private javax.swing.JButton Horario10;
-    private javax.swing.JButton Horario11;
-    private javax.swing.JButton Horario12;
-    private javax.swing.JButton Horario13;
     private javax.swing.JButton Horario2;
     private javax.swing.JButton Horario3;
     private javax.swing.JButton Horario4;
     private javax.swing.JButton Horario5;
     private javax.swing.JButton Horario6;
-    private javax.swing.JButton Horario7;
-    private javax.swing.JButton Horario8;
-    private javax.swing.JButton Horario9;
     private javax.swing.JButton Jueves;
     private javax.swing.JButton Jueves1;
-    private javax.swing.JButton Jueves10;
-    private javax.swing.JButton Jueves11;
-    private javax.swing.JButton Jueves12;
-    private javax.swing.JButton Jueves13;
     private javax.swing.JButton Jueves2;
     private javax.swing.JButton Jueves3;
     private javax.swing.JButton Jueves4;
     private javax.swing.JButton Jueves5;
     private javax.swing.JButton Jueves6;
-    private javax.swing.JButton Jueves7;
-    private javax.swing.JButton Jueves8;
-    private javax.swing.JButton Jueves9;
     private javax.swing.JLabel LogoPaciente;
     private javax.swing.JButton Lunes;
     private javax.swing.JButton Lunes1;
-    private javax.swing.JButton Lunes10;
-    private javax.swing.JButton Lunes11;
-    private javax.swing.JButton Lunes12;
-    private javax.swing.JButton Lunes13;
     private javax.swing.JButton Lunes2;
     private javax.swing.JButton Lunes3;
     private javax.swing.JButton Lunes4;
     private javax.swing.JButton Lunes5;
     private javax.swing.JButton Lunes6;
-    private javax.swing.JButton Lunes7;
-    private javax.swing.JButton Lunes8;
-    private javax.swing.JButton Lunes9;
     private javax.swing.JButton Martes;
     private javax.swing.JButton Martes1;
-    private javax.swing.JButton Martes10;
-    private javax.swing.JButton Martes11;
-    private javax.swing.JButton Martes12;
-    private javax.swing.JButton Martes13;
     private javax.swing.JButton Martes2;
     private javax.swing.JButton Martes3;
     private javax.swing.JButton Martes4;
     private javax.swing.JButton Martes5;
     private javax.swing.JButton Martes6;
-    private javax.swing.JButton Martes7;
-    private javax.swing.JButton Martes8;
-    private javax.swing.JButton Martes9;
     private javax.swing.JButton Miercoles;
     private javax.swing.JButton Miercoles1;
-    private javax.swing.JButton Miercoles10;
-    private javax.swing.JButton Miercoles11;
-    private javax.swing.JButton Miercoles12;
-    private javax.swing.JButton Miercoles13;
     private javax.swing.JButton Miercoles2;
     private javax.swing.JButton Miercoles3;
     private javax.swing.JButton Miercoles4;
     private javax.swing.JButton Miercoles5;
     private javax.swing.JButton Miercoles6;
-    private javax.swing.JButton Miercoles7;
-    private javax.swing.JButton Miercoles8;
-    private javax.swing.JButton Miercoles9;
     private javax.swing.JButton NombreDoctor;
     private javax.swing.JButton NumConsultorio;
     private javax.swing.JButton NumPiso;
     private javax.swing.JLabel ReagendarCita;
     private javax.swing.JPanel TablaHorario;
-    private javax.swing.JPanel TablaHorario1;
     private javax.swing.JPanel TablaInfoCita;
     private javax.swing.JButton Viernes;
     private javax.swing.JButton Viernes1;
-    private javax.swing.JButton Viernes10;
-    private javax.swing.JButton Viernes11;
-    private javax.swing.JButton Viernes12;
-    private javax.swing.JButton Viernes13;
     private javax.swing.JButton Viernes2;
     private javax.swing.JButton Viernes3;
     private javax.swing.JButton Viernes4;
     private javax.swing.JButton Viernes5;
     private javax.swing.JButton Viernes6;
-    private javax.swing.JButton Viernes7;
-    private javax.swing.JButton Viernes8;
-    private javax.swing.JButton Viernes9;
     private javax.swing.JButton btnRegresar;
     private javax.swing.JButton btnSiguiente;
     private javax.swing.JLabel jLabel2;

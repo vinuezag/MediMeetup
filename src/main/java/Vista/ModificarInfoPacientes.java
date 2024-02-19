@@ -55,6 +55,12 @@ public class ModificarInfoPacientes extends javax.swing.JInternalFrame {
         CheckCel = new javax.swing.JLabel();
         CheckDic = new javax.swing.JLabel();
 
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
+        setResizable(true);
+        setAutoscrolls(true);
+
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setAutoscrolls(true);
 
@@ -102,6 +108,8 @@ public class ModificarInfoPacientes extends javax.swing.JInternalFrame {
         Direccion.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Direccion.setText("Direccion");
 
+        txtCelular.setEditable(false);
+        txtCelular.setBackground(new java.awt.Color(236, 236, 236));
         txtCelular.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         txtCelular.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -109,6 +117,7 @@ public class ModificarInfoPacientes extends javax.swing.JInternalFrame {
             }
         });
 
+        txtEmail.setBackground(new java.awt.Color(236, 236, 236));
         txtEmail.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         txtEmail.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -116,6 +125,7 @@ public class ModificarInfoPacientes extends javax.swing.JInternalFrame {
             }
         });
 
+        txtDireccion.setBackground(new java.awt.Color(236, 236, 236));
         txtDireccion.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         txtDireccion.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -123,14 +133,17 @@ public class ModificarInfoPacientes extends javax.swing.JInternalFrame {
             }
         });
 
+        txtAlergias.setBackground(new java.awt.Color(236, 236, 236));
         txtAlergias.setColumns(20);
         txtAlergias.setRows(5);
         jScrollPane1.setViewportView(txtAlergias);
 
+        txtMedicamentos.setBackground(new java.awt.Color(236, 236, 236));
         txtMedicamentos.setColumns(20);
         txtMedicamentos.setRows(5);
         jScrollPane3.setViewportView(txtMedicamentos);
 
+        txtEnfermedades.setBackground(new java.awt.Color(236, 236, 236));
         txtEnfermedades.setColumns(20);
         txtEnfermedades.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
         txtEnfermedades.setRows(5);
@@ -182,13 +195,15 @@ public class ModificarInfoPacientes extends javax.swing.JInternalFrame {
                                             .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(Medicamentos)
                                             .addComponent(Direccion)
-                                            .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(CheckDic, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                                 .addGap(132, 132, 132))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(28, 28, 28)
                         .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(CheckDic, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(101, 101, 101))
         );
         jPanel1Layout.setVerticalGroup(
@@ -238,12 +253,12 @@ public class ModificarInfoPacientes extends javax.swing.JInternalFrame {
                         .addGap(18, 18, 18)
                         .addComponent(btnRegresar))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtDireccion)
+                            .addComponent(CheckDic, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnSiguiente)))
-                .addGap(8, 8, 8)
-                .addComponent(CheckDic, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(252, Short.MAX_VALUE))
+                .addContainerGap(284, Short.MAX_VALUE))
         );
 
         jScrollPane2.setViewportView(jPanel1);

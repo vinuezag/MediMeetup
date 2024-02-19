@@ -159,17 +159,17 @@ public class ConsultarCitasMedicas extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
-        MenuPaciente ventanaMP = new MenuPaciente();
-        escritorio.add(ventanaMP);
-        ventanaMP.show();
-    }//GEN-LAST:event_btnRegresarActionPerformed
-
     private void btnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguienteActionPerformed
-        MenuPaciente ventanaMP = new MenuPaciente();
+        MenuMedico ventanaMP = new MenuMedico();
         escritorio.add(ventanaMP);
         ventanaMP.show();
     }//GEN-LAST:event_btnSiguienteActionPerformed
+
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
+        MenuMedico ventanaMP = new MenuMedico();
+        escritorio.add(ventanaMP);
+        ventanaMP.show();
+    }//GEN-LAST:event_btnRegresarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

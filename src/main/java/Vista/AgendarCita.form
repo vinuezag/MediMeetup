@@ -130,9 +130,9 @@
                                   <Component id="ConfirmarAgenda" min="-2" pref="53" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="3" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="lblNombre" alignment="1" min="-2" pref="24" max="-2" attributes="0"/>
-                                      <Component id="lblCedula" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                                      <Component id="lblCedula" min="-2" pref="24" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                                   <Component id="TablaHorario" min="-2" max="-2" attributes="0"/>
