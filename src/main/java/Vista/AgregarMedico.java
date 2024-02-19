@@ -457,8 +457,8 @@ public class AgregarMedico extends javax.swing.JInternalFrame {
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
         PantallaPrincipal ventanaMP = new PantallaPrincipal();
-        escritorio.add(ventanaMP);
-        ventanaMP.show();
+escritorio.add(ventanaMP);
+ventanaMP.setVisible(true);
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void btnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguienteActionPerformed

@@ -234,9 +234,9 @@ public class MenuPaciente extends javax.swing.JInternalFrame {
 
     private void btnSalidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalidaActionPerformed
         // TODO add your handling code here:
-        PantallaPrincipal ventanaPI = new PantallaPrincipal();
-        escritorio.add(ventanaPI);
-        ventanaPI.show();
+        PantallaPrincipal ventanaMP = new PantallaPrincipal();
+escritorio.add(ventanaMP);
+ventanaMP.setVisible(true);
     }//GEN-LAST:event_btnSalidaActionPerformed
 
     private void btnModificarPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarPActionPerformed

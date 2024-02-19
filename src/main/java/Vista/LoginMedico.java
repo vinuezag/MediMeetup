@@ -19,8 +19,6 @@ public class LoginMedico extends javax.swing.JInternalFrame {
     public LoginMedico() {
         initComponents();
         
-        LogoMedico.setBorder(null);
-        LogoMedico.setBackground(new Color(0,0,0,0));
     }
 
     /**

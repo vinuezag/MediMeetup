@@ -282,13 +282,13 @@ public class ModificarInfoPacientes extends javax.swing.JInternalFrame {
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
         PantallaPrincipal ventanaMP = new PantallaPrincipal();
         escritorio.add(ventanaMP);
-        ventanaMP.show();
+        ventanaMP.setVisible(true);
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void btnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguienteActionPerformed
-        MenuPaciente ventanaMP = new MenuPaciente();
-        escritorio.add(ventanaMP);
-        ventanaMP.show();
+        PantallaPrincipal ventanaMP = new PantallaPrincipal();
+            escritorio.add(ventanaMP);
+            ventanaMP.setVisible(true);
     }//GEN-LAST:event_btnSiguienteActionPerformed
 
     private void txtCelularKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCelularKeyPressed

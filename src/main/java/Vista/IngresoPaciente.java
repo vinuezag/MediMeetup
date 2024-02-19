@@ -444,8 +444,8 @@ public class IngresoPaciente extends javax.swing.JFrame {
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
         PantallaPrincipal ventanaMP = new PantallaPrincipal();
-        escritorio.add(ventanaMP);
-        ventanaMP.show();
+escritorio.add(ventanaMP);
+ventanaMP.setVisible(true);
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void txtNombresKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombresKeyPressed
