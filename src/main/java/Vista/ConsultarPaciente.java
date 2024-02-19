@@ -10,12 +10,12 @@ import static Vista.PantallaPrincipal.escritorio;
  *
  * @author USUARIO
  */
-public class ConsultorioMedico extends javax.swing.JInternalFrame {
+public class ConsultarPaciente extends javax.swing.JInternalFrame {
 
     /**
-     * Creates new form ConsultaMedica
+     * Creates new form ConsultarCitasMedicas
      */
-    public ConsultorioMedico() {
+    public ConsultarPaciente() {
         initComponents();
     }
 
@@ -45,21 +45,14 @@ public class ConsultorioMedico extends javax.swing.JInternalFrame {
         btnSiguiente = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
-        NoAsistido = new javax.swing.JCheckBox();
-        Cancelado = new javax.swing.JCheckBox();
-        Reprogramado = new javax.swing.JCheckBox();
-        Ejecutado = new javax.swing.JCheckBox();
-        ConfirmarAgenda = new javax.swing.JButton();
-        txtBarraBusqueda = new javax.swing.JTextField();
-        btnBusqueda = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         txtDiagnostico = new javax.swing.JTextArea();
-        jLabel8 = new javax.swing.JLabel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        txtDiagnostico1 = new javax.swing.JTextArea();
+        txtBarraBusqueda = new javax.swing.JTextField();
+        btnBusqueda = new javax.swing.JButton();
+        EstadoCita = new javax.swing.JLabel();
+        lblEstadoCita = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 51, 51));
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
@@ -71,11 +64,11 @@ public class ConsultorioMedico extends javax.swing.JInternalFrame {
 
         CancelarCita.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         CancelarCita.setForeground(new java.awt.Color(48, 44, 44));
-        CancelarCita.setText("CONSULTORIO");
+        CancelarCita.setText("CONSULTAR");
 
         paciente.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        paciente.setForeground(new java.awt.Color(51, 153, 255));
-        paciente.setText("MEDICO");
+        paciente.setForeground(new java.awt.Color(51, 204, 0));
+        paciente.setText("PACIENTE");
 
         TablaHorario.setBackground(new java.awt.Color(250, 250, 250));
 
@@ -170,21 +163,13 @@ public class ConsultorioMedico extends javax.swing.JInternalFrame {
         jLabel6.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         jLabel6.setText("Informacion de Cita Medica");
 
-        NoAsistido.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
-        NoAsistido.setForeground(new java.awt.Color(255, 255, 255));
-        NoAsistido.setText("No Asistido");
+        jLabel9.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        jLabel9.setText("Diagnostico");
 
-        Cancelado.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
-        Cancelado.setForeground(new java.awt.Color(255, 0, 0));
-        Cancelado.setText("Cancelado");
-
-        Reprogramado.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
-        Reprogramado.setForeground(new java.awt.Color(255, 255, 51));
-        Reprogramado.setText("Reprogramado");
-
-        Ejecutado.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
-        Ejecutado.setForeground(new java.awt.Color(0, 204, 51));
-        Ejecutado.setText("Ejecutado");
+        txtDiagnostico.setBackground(new java.awt.Color(236, 236, 236));
+        txtDiagnostico.setColumns(20);
+        txtDiagnostico.setRows(5);
+        jScrollPane2.setViewportView(txtDiagnostico);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -193,58 +178,29 @@ public class ConsultorioMedico extends javax.swing.JInternalFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addContainerGap(53, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(NoAsistido)
-                    .addComponent(jLabel6)
-                    .addComponent(Cancelado)
-                    .addComponent(Reprogramado)
-                    .addComponent(Ejecutado))
-                .addGap(77, 77, 77))
+                    .addComponent(jLabel9)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6))
+                .addGap(50, 50, 50))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addComponent(jLabel6)
-                .addGap(42, 42, 42)
-                .addComponent(NoAsistido)
-                .addGap(42, 42, 42)
-                .addComponent(Cancelado)
-                .addGap(42, 42, 42)
-                .addComponent(Reprogramado)
-                .addGap(42, 42, 42)
-                .addComponent(Ejecutado)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addGap(54, 54, 54)
+                .addComponent(jLabel9)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(37, Short.MAX_VALUE))
         );
-
-        ConfirmarAgenda.setBackground(new java.awt.Color(102, 153, 255));
-        ConfirmarAgenda.setFont(new java.awt.Font("Trebuchet MS", 1, 30)); // NOI18N
-        ConfirmarAgenda.setText("Guardar");
-        ConfirmarAgenda.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 204), 4, true));
-        ConfirmarAgenda.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ConfirmarAgendaActionPerformed(evt);
-            }
-        });
 
         txtBarraBusqueda.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
 
         btnBusqueda.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Documents\\MediMeetup\\src\\main\\resource\\Imagenes\\48.Buscar.png")); // NOI18N
 
-        jLabel7.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        jLabel7.setText("Diagnostico");
-
-        txtDiagnostico.setBackground(new java.awt.Color(236, 236, 236));
-        txtDiagnostico.setColumns(20);
-        txtDiagnostico.setRows(5);
-        jScrollPane2.setViewportView(txtDiagnostico);
-
-        jLabel8.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        jLabel8.setText("Receta Medica");
-
-        txtDiagnostico1.setBackground(new java.awt.Color(236, 236, 236));
-        txtDiagnostico1.setColumns(20);
-        txtDiagnostico1.setRows(5);
-        jScrollPane3.setViewportView(txtDiagnostico1);
+        EstadoCita.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        EstadoCita.setText("La cita medica esta:");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -255,40 +211,26 @@ public class ConsultorioMedico extends javax.swing.JInternalFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(68, 68, 68)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(jPanel2Layout.createSequentialGroup()
-                                            .addComponent(txtBarraBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(btnBusqueda))
-                                        .addComponent(jLabel7)
-                                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(2, 2, 2))))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(26, 26, 26)
-                                .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(ConfirmarAgenda, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(55, 55, 55))
+                                .addGap(118, 118, 118)
+                                .addComponent(CancelarCita, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addComponent(paciente, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(79, 79, 79)))
+                        .addGap(103, 103, 103)
+                        .addComponent(LogoPaciente))
                     .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(70, 70, 70)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblEstadoCita, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGap(118, 118, 118)
-                                        .addComponent(CancelarCita, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                        .addComponent(paciente, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(79, 79, 79)))
-                                .addGap(103, 103, 103)
-                                .addComponent(LogoPaciente))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(68, 68, 68)
-                                .addComponent(jLabel8)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addComponent(txtBarraBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnBusqueda))
+                            .addComponent(EstadoCita))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(TablaHorario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -319,26 +261,16 @@ public class ConsultorioMedico extends javax.swing.JInternalFrame {
                                 .addComponent(btnBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(54, 54, 54)
-                                .addComponent(jLabel7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(37, 37, 37)
-                                .addComponent(jLabel8)
-                                .addGap(18, 18, 18)
-                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(62, 62, 62)
+                                .addComponent(EstadoCita)
+                                .addGap(26, 26, 26)
+                                .addComponent(lblEstadoCita, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnSiguiente)
-                            .addComponent(ConfirmarAgenda, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(126, 126, 126))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(51, 51, 51)
-                        .addComponent(btnRegresar)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addComponent(btnSiguiente, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnRegresar, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(126, 126, 126))
         );
 
         jScrollPane1.setViewportView(jPanel2);
@@ -375,24 +307,11 @@ public class ConsultorioMedico extends javax.swing.JInternalFrame {
         ventanaMP.show();
     }//GEN-LAST:event_btnSiguienteActionPerformed
 
-    private void ConfirmarAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmarAgendaActionPerformed
-
-        //MENSAJE DE CONFIRMACION
-
-        MenuPaciente ventanaMP = new MenuPaciente();
-        escritorio.add(ventanaMP);
-        ventanaMP.show();
-    }//GEN-LAST:event_ConfirmarAgendaActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JCheckBox Cancelado;
     private javax.swing.JLabel CancelarCita;
-    private javax.swing.JButton ConfirmarAgenda;
-    private javax.swing.JCheckBox Ejecutado;
+    private javax.swing.JLabel EstadoCita;
     private javax.swing.JLabel LogoPaciente;
-    private javax.swing.JCheckBox NoAsistido;
-    private javax.swing.JCheckBox Reprogramado;
     private javax.swing.JPanel TablaHorario;
     private javax.swing.JButton btnBusqueda;
     private javax.swing.JButton btnRegresar;
@@ -403,18 +322,16 @@ public class ConsultorioMedico extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JLabel lblEstadoCita;
     private javax.swing.JLabel lblInfoPacientes;
     private javax.swing.JLabel paciente;
     private javax.swing.JTextField txtBarraBusqueda;
     private javax.swing.JTextArea txtDiagnostico;
-    private javax.swing.JTextArea txtDiagnostico1;
     // End of variables declaration//GEN-END:variables
 }
