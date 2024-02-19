@@ -46,11 +46,9 @@ public class MenuMedico extends javax.swing.JInternalFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Documents\\MediMeetup\\src\\main\\resource\\Imagenes\\400.Medico.jpg")); // NOI18N
 
-        btnAgendarCita.setBackground(new java.awt.Color(158, 226, 225));
         btnAgendarCita.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        btnAgendarCita.setForeground(new java.awt.Color(255, 255, 255));
-        btnAgendarCita.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Documents\\MediMeetup\\src\\main\\resource\\Imagenes\\210.AgendarCita.jpg")); // NOI18N
-        btnAgendarCita.setText("Agendar Cita Medica");
+        btnAgendarCita.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Documents\\MediMeetup\\src\\main\\resource\\Imagenes\\210.ConsultorioMedico.jpg")); // NOI18N
+        btnAgendarCita.setText("Consultorio Medico");
         btnAgendarCita.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnAgendarCita.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         btnAgendarCita.addActionListener(new java.awt.event.ActionListener() {
@@ -59,10 +57,8 @@ public class MenuMedico extends javax.swing.JInternalFrame {
             }
         });
 
-        btnBuscarCita.setBackground(new java.awt.Color(158, 226, 225));
         btnBuscarCita.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        btnBuscarCita.setForeground(new java.awt.Color(255, 255, 255));
-        btnBuscarCita.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Documents\\MediMeetup\\src\\main\\resource\\Imagenes\\210.BuscarCita.jpg")); // NOI18N
+        btnBuscarCita.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Documents\\MediMeetup\\src\\main\\resource\\Imagenes\\210.BuscarCitaMedica.jpg")); // NOI18N
         btnBuscarCita.setText("Consultar Cita Medica");
         btnBuscarCita.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnBuscarCita.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
@@ -72,11 +68,9 @@ public class MenuMedico extends javax.swing.JInternalFrame {
             }
         });
 
-        btnReagendarCita.setBackground(new java.awt.Color(158, 226, 225));
         btnReagendarCita.setFont(new java.awt.Font("Trebuchet MS", 1, 16)); // NOI18N
-        btnReagendarCita.setForeground(new java.awt.Color(255, 255, 255));
-        btnReagendarCita.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Documents\\MediMeetup\\src\\main\\resource\\Imagenes\\210.ModificarCita.jpg")); // NOI18N
-        btnReagendarCita.setText("Reagendar Cita Medica");
+        btnReagendarCita.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Documents\\MediMeetup\\src\\main\\resource\\Imagenes\\210.BuscarPaciente.jpg")); // NOI18N
+        btnReagendarCita.setText("Buscar Paciente");
         btnReagendarCita.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnReagendarCita.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         btnReagendarCita.addActionListener(new java.awt.event.ActionListener() {
@@ -99,8 +93,9 @@ public class MenuMedico extends javax.swing.JInternalFrame {
         menu.setForeground(new java.awt.Color(48, 44, 44));
         menu.setText("MENU");
 
+        paciente.setBackground(new java.awt.Color(233, 133, 70));
         paciente.setFont(new java.awt.Font("Trebuchet MS", 1, 48)); // NOI18N
-        paciente.setForeground(new java.awt.Color(46, 231, 46));
+        paciente.setForeground(new java.awt.Color(233, 133, 70));
         paciente.setText("MEDICO");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -114,9 +109,9 @@ public class MenuMedico extends javax.swing.JInternalFrame {
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(btnAgendarCita, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btnReagendarCita, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(btnBuscarCita, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(109, 109, 109)
+                .addGap(97, 97, 97)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -138,10 +133,10 @@ public class MenuMedico extends javax.swing.JInternalFrame {
                         .addComponent(menu)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(paciente)
-                        .addGap(24, 24, 24)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnBuscarCita, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                            .addComponent(btnAgendarCita, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnAgendarCita, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnBuscarCita, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnReagendarCita))
                     .addGroup(jPanel1Layout.createSequentialGroup()

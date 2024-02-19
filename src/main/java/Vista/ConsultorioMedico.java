@@ -74,7 +74,7 @@ public class ConsultorioMedico extends javax.swing.JInternalFrame {
         CancelarCita.setText("CONSULTORIO");
 
         paciente.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        paciente.setForeground(new java.awt.Color(51, 153, 255));
+        paciente.setForeground(new java.awt.Color(233, 133, 70));
         paciente.setText("MEDICO");
 
         TablaHorario.setBackground(new java.awt.Color(250, 250, 250));

@@ -67,7 +67,7 @@ public class ConsultarPaciente extends javax.swing.JInternalFrame {
         CancelarCita.setText("CONSULTAR");
 
         paciente.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        paciente.setForeground(new java.awt.Color(51, 204, 0));
+        paciente.setForeground(new java.awt.Color(233, 133, 70));
         paciente.setText("PACIENTE");
 
         TablaHorario.setBackground(new java.awt.Color(250, 250, 250));

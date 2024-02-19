@@ -52,7 +52,7 @@ public class ConsultarCitasMedicas extends javax.swing.JInternalFrame {
         CancelarCita.setText("CONSULTAR");
 
         paciente.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        paciente.setForeground(new java.awt.Color(51, 204, 0));
+        paciente.setForeground(new java.awt.Color(233, 133, 70));
         paciente.setText("CITA MEDICA");
 
         LogoPaciente.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Documents\\MediMeetup\\src\\main\\resource\\Imagenes\\90.Medico.jpg")); // NOI18N
@@ -101,12 +101,11 @@ public class ConsultarCitasMedicas extends javax.swing.JInternalFrame {
                                 .addGap(110, 110, 110)
                                 .addComponent(paciente, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(103, 103, 103)
-                        .addComponent(LogoPaciente)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 360, Short.MAX_VALUE))
+                        .addComponent(LogoPaciente))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(20, 20, 20)
-                        .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnSiguiente, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(221, 221, 221))
             .addGroup(jPanel2Layout.createSequentialGroup()
