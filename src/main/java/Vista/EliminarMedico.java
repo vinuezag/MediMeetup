@@ -5,6 +5,7 @@
 package Vista;
 
 import static Vista.PantallaPrincipal.escritorio;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -205,6 +206,20 @@ public class EliminarMedico extends javax.swing.JInternalFrame {
         ventanaMP.show();
     }//GEN-LAST:event_EliminarActionPerformed
 
+    private void mostrarMedicos(){
+        String [] columnas = {"Nombres","Especialidad Medica", "Genero","Cargo","Fecha de Contratacion"};
+        
+        String [] registros = new String [5];
+        DefaultTableModel modelo = new DefaultTableModel(null, columnas);
+        
+        try{
+            
+            
+        }catch(){
+            
+        }
+    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Eliminar;
