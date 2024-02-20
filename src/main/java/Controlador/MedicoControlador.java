@@ -64,27 +64,44 @@ public class MedicoControlador {
 
     
     
-     public void insertarMedico(MedicoModelo pa, ConsultoriosModelo m, AgendasModelo a) {
+     public void insertarMedico(MedicoModelo pa) {
+    try {
+        String sql = "call sp_CrearMedicoYPersona(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        ejecutar = conectar.prepareStatement(sql);
+        ejecutar.setString(1, pa.getCedula());
+        ejecutar.setString(2, pa.getNombre());
+        ejecutar.setString(3, pa.getApellido());
+        ejecutar.setString(4, pa.getCorreoe());
+        ejecutar.setInt(5, pa.getCelular());
+        ejecutar.setString(6, pa.getTiposangre());
+        ejecutar.setString(7, pa.getFechanacimiento());
+        ejecutar.setString(8, pa.getDirreccion());
+        ejecutar.setString(9, pa.getGenero());
+        ejecutar.setString(10, pa.getIdconsultorio());
+        ejecutar.setString(11, pa.getIdagendas());
+        ejecutar.setString(12, pa.getEspecialidad());
+        ejecutar.setString(13, pa.getCargo());
+        ejecutar.setString(14, pa.getFechainicio());
+        int resultado = ejecutar.executeUpdate();
+        if (resultado > 0) {
+            JOptionPane.showMessageDialog(null, "Médico creado con éxito");
+            System.out.println("Médico creado con éxito");
+        } else {
+            JOptionPane.showMessageDialog(null, "Revise los datos ingresados");
+            System.out.println("Revise los datos ingresados");
+        }
+    } catch (SQLException e) {
+        System.out.println("Error SQL: " + e.getMessage());
+    } finally {
         try {
-            String sql = "call sp_CrearMedicoYPersona('" + pa.getCedula()+ "','" + pa.getNombre()+ "','" 
-                    + pa.getApellido()+ "','" + pa.getCorreoe()+ "','"  + pa.getCelular()+ "','" + pa.getTiposangre()
-                    + pa.getFechanacimiento()+ "','" + pa.getDirreccion()+ "','" + pa.getGenero()+ pa.getCedula()
-                    + "','" + a.getIdagenda()+ "','" +m.getIdconsultorio()+ "','" + pa.getEspecialidad()+"','" + pa.getCargo()
-                    + "','" + pa.getFechainicio()+"');";
-            ejecutar = (PreparedStatement) conectar.prepareCall(sql);
-            var resultado = ejecutar.executeUpdate();
-            if (resultado > 0) {
-                JOptionPane.showMessageDialog(null, "Medico Creado con Éxito");
-                System.out.println("Medico CREADO CON ÉXITO");
+            if (ejecutar != null) {
                 ejecutar.close();
-            } else {
-                JOptionPane.showMessageDialog(null, "Revise los Datos ingresados");
-                System.out.println("REVISE LOS DATOS INGRESADOS");
             }
         } catch (SQLException e) {
-            System.out.println("ERROR SQL");
+            System.out.println("Error al cerrar  " );
         }
     }
+  }
     
         public ArrayList<Object[]> buscarMedico(String cedula) {
             ArrayList<Object[]> listaObject=new ArrayList<>();
@@ -140,11 +157,16 @@ public class MedicoControlador {
     }
     public void actualizarMedico(MedicoModelo pa) {
         try {
-            String sql = "call sp_ActualizarMedico('" + pa.getCedula()+ "','" + pa.getCorreoe()+ "','" 
-                    + pa.getCelular()+ "','" + pa.getDirreccion()+ "','" + pa.getCargo()
-                    + pa.getEspecialidad()+ "');";
-            ejecutar = (PreparedStatement) conectar.prepareCall(sql);
-            int resultado = ejecutar.executeUpdate();
+             String sql = "CALL sp_ActualizarMedico(?, ?, ?, ?, ?, ?)";
+             PreparedStatement ejecutar = conectar.prepareStatement(sql);
+             ejecutar.setString(1, pa.getCedula());
+             ejecutar.setString(2, pa.getCorreoe());
+             ejecutar.setInt(3, pa.getCelular());
+             ejecutar.setString(4, pa.getDirreccion());
+             ejecutar.setString(5, pa.getCargo());
+             ejecutar.setString(6, pa.getEspecialidad());
+    
+             int resultado = ejecutar.executeUpdate();
             if (resultado > 0) {
                 JOptionPane.showMessageDialog(null, "Medico Actualizado con Éxito");
                 System.out.println("MEDICO ACTUALIZADO CON ÉXITO");
@@ -159,12 +181,12 @@ public class MedicoControlador {
     }
     public void eliminarMedico(String cedula) {
         try {
-            String sql = "call sp_EliminarMedico(" + cedula + ");";
+            String sql = "call eliminar_persona_cascada(" + cedula + ");";
             ejecutar = (PreparedStatement) conectar.prepareCall(sql);
             int resultado = ejecutar.executeUpdate();
             if (resultado > 0) {
                 JOptionPane.showMessageDialog(null, "Medico Eliminado con éxito");
-                System.out.println("MEDICO ELIMINADA CON ÉXITO");
+                System.out.println("MEDICO ELIMINADO CON ÉXITO");
                 ejecutar.close();
             } else {
                 JOptionPane.showMessageDialog(null, "Revise los datos ingresados");

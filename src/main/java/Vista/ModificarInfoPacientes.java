@@ -4,6 +4,10 @@
  */
 package Vista;
 
+import Controlador.MedicoControlador;
+import Controlador.PacienteControlador;
+import Modelo.MedicoModelo;
+import Modelo.PacienteModelo;
 import static Vista.PantallaPrincipal.escritorio;
 import java.awt.Color;
 
@@ -343,7 +347,14 @@ public class ModificarInfoPacientes extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtDireccionKeyPressed
 
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
-
+       int celular=Integer.parseInt(txtCelular.getText());
+       PacienteModelo pm=new PacienteModelo(0, txtAlergias.getText(), txtMedicamentos.getText(), txtEnfermedades.getText(),
+                null, null, null, txtEmail.getText(), celular, null,null, txtDireccion.getText(), null);
+        PacienteControlador pc=new PacienteControlador();
+        pc.actualizarPaciente(pm);  
+        MenuPaciente ventanaMP = new MenuPaciente();
+        escritorio.add(ventanaMP);
+        ventanaMP.show(); 
     }//GEN-LAST:event_btnActualizarActionPerformed
 
 

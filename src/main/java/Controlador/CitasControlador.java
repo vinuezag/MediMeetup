@@ -11,6 +11,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -127,6 +128,47 @@ public class CitasControlador {
             } else {
                 JOptionPane.showMessageDialog(null, "Revise los datos ingresados");
                 System.out.println("REVISE LOS DATOS INGRESADOS");
+            }
+        } catch (SQLException e) {
+            System.out.println("ERROR SQL");
+        }
+    }
+     public ArrayList<Object[]> datosCita() {
+        ArrayList<Object[]> listaObject=new ArrayList<>();
+        
+        try {
+            String sql = "call ssp_MostrarInformacionCitasPacientes();";
+            ejecutar = (PreparedStatement) conectar.prepareCall(sql);
+            res = ejecutar.executeQuery();
+            int cont = 1;
+            while (res.next()) {
+                Object[] obpersona = new Object[7];
+                for (int i = 1; i < 7; i++) {
+                    obpersona[i] = res.getObject(i+1);
+                }
+                obpersona[0]=cont;
+                listaObject.add(obpersona);
+                cont++;
+            }
+            ejecutar.close();
+            return listaObject;
+
+        } catch (SQLException e) {
+            System.out.println("ERROR SQL CARGA PERSONAS");
+
+        }
+        return null;
+      }
+     public void MostrarCitaMedico(MedicoModelo mm) {
+       try {
+            String sql = "call sp_MostrarCita('" + mm.getEspecialidad()+"');";
+            ejecutar = (PreparedStatement) conectar.prepareCall(sql);
+            int resultado = ejecutar.executeUpdate();
+            if (resultado > 0) {
+                JOptionPane.showMessageDialog(null, "Cita si existe");
+                ejecutar.close();
+            } else {
+                JOptionPane.showMessageDialog(null, "Revise los datos ingresados");
             }
         } catch (SQLException e) {
             System.out.println("ERROR SQL");

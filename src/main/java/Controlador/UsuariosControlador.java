@@ -64,7 +64,7 @@ public class UsuariosControlador {
         return null;
     }
     //sp_ActualizarUsuario
-    public void insertarPersona(UsuarioModelo p) {
+    public void actualizarUsuario(UsuarioModelo p) {
         try {
             String sql = "call sp_ActualizarUsuario('" + p.getUsuario()+ "','" + p.getClave()+ "','" + p.getPregunataseguridad()+ "');";
             ejecutar = (PreparedStatement) conectar.prepareCall(sql);

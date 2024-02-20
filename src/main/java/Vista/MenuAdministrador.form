@@ -108,11 +108,8 @@
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="btnEliminarMedico" alignment="0" pref="0" max="32767" attributes="0"/>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                          <Component id="btnModificarMedico" min="-2" max="-2" attributes="0"/>
-                                      </Group>
+                                      <Component id="btnEliminarMedico" pref="0" max="32767" attributes="0"/>
+                                      <Component id="btnModificarMedico" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
@@ -136,11 +133,6 @@
       </Layout>
       <SubComponents>
         <Component class="javax.swing.JLabel" name="jLabel1">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\USUARIO\Documents\MediMeetup\src\main\resource\Imagenes\400.Amin.jpg"/>
-            </Property>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="menu">
           <Properties>
@@ -169,9 +161,6 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Trebuchet MS" size="18" style="1"/>
             </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\USUARIO\Documents\MediMeetup\src\main\resource\Imagenes\210.AgregarUser.jpg"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Agregar Personal"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
             <Property name="verticalTextPosition" type="int" value="1"/>
@@ -184,9 +173,6 @@
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Trebuchet MS" size="18" style="1"/>
-            </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\USUARIO\Documents\MediMeetup\src\main\resource\Imagenes\210.BuscarUser.jpg"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Consultar Personal"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
@@ -201,9 +187,6 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Trebuchet MS" size="17" style="1"/>
             </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\USUARIO\Documents\MediMeetup\src\main\resource\Imagenes\210.ModificarUser.jpg"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Modificar Informaci&#xf3;n"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
             <Property name="verticalTextPosition" type="int" value="1"/>
@@ -216,9 +199,6 @@
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Trebuchet MS" size="18" style="1"/>
-            </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\USUARIO\Documents\MediMeetup\src\main\resource\Imagenes\210.EliminarUser.jpg"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Eliminar Personal"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
@@ -233,20 +213,12 @@
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="ff" type="rgb"/>
             </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\USUARIO\Documents\MediMeetup\src\main\resource\Imagenes\48.Salir.png"/>
-            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSalidaActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lblNombreCedula">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\USUARIO\Documents\MediMeetup\src\main\resource\Imagenes\70,Membrete.jpg"/>
-            </Property>
-          </Properties>
         </Component>
       </SubComponents>
     </Container>

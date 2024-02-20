@@ -51,8 +51,6 @@ public class MenuPaciente extends javax.swing.JInternalFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setAutoscrolls(true);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Documents\\MediMeetup\\src\\main\\resource\\Imagenes\\400.Paciente.jpg")); // NOI18N
-
         menu.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
         menu.setForeground(new java.awt.Color(48, 44, 44));
         menu.setText("MENU");
@@ -62,7 +60,6 @@ public class MenuPaciente extends javax.swing.JInternalFrame {
         paciente.setText("PACIENTE");
 
         btnAgendarCita.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        btnAgendarCita.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Documents\\MediMeetup\\src\\main\\resource\\Imagenes\\210.AgregarCita.jpg")); // NOI18N
         btnAgendarCita.setText("Agendar Cita Medica");
         btnAgendarCita.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnAgendarCita.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
@@ -73,7 +70,6 @@ public class MenuPaciente extends javax.swing.JInternalFrame {
         });
 
         btnBuscarCita.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        btnBuscarCita.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Documents\\MediMeetup\\src\\main\\resource\\Imagenes\\210.BuscarCita.jpg")); // NOI18N
         btnBuscarCita.setText("Consultar Cita Medica");
         btnBuscarCita.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnBuscarCita.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
@@ -84,7 +80,6 @@ public class MenuPaciente extends javax.swing.JInternalFrame {
         });
 
         btnReagendarCita.setFont(new java.awt.Font("Trebuchet MS", 1, 16)); // NOI18N
-        btnReagendarCita.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Documents\\MediMeetup\\src\\main\\resource\\Imagenes\\210.ModificarCita.jpg")); // NOI18N
         btnReagendarCita.setText("Reagendar Cita Medica");
         btnReagendarCita.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnReagendarCita.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
@@ -95,7 +90,6 @@ public class MenuPaciente extends javax.swing.JInternalFrame {
         });
 
         btnCancelarCita.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        btnCancelarCita.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Documents\\MediMeetup\\src\\main\\resource\\Imagenes\\210.EliminarCita.jpg")); // NOI18N
         btnCancelarCita.setText("Cancelar Cita Medica");
         btnCancelarCita.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnCancelarCita.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
@@ -106,16 +100,12 @@ public class MenuPaciente extends javax.swing.JInternalFrame {
         });
 
         btnSalida.setBackground(new java.awt.Color(255, 0, 0));
-        btnSalida.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Documents\\MediMeetup\\src\\main\\resource\\Imagenes\\48.Salir.png")); // NOI18N
         btnSalida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalidaActionPerformed(evt);
             }
         });
 
-        lblNombreCedula.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Documents\\MediMeetup\\src\\main\\resource\\Imagenes\\70.MenbreteP.jpg")); // NOI18N
-
-        btnModificarP.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Documents\\MediMeetup\\src\\main\\resource\\Imagenes\\128.jpg")); // NOI18N
         btnModificarP.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         btnModificarP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -176,9 +166,7 @@ public class MenuPaciente extends javax.swing.JInternalFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(btnCancelarCita, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(0, 0, Short.MAX_VALUE)
-                                        .addComponent(btnReagendarCita))))
+                                    .addComponent(btnReagendarCita, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btnSalida, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)

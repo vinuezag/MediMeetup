@@ -4,14 +4,23 @@
  */
 package Vista;
 
+import Controlador.CitasControlador;
+import Controlador.MedicoControlador;
+import Controlador.PacienteControlador;
+import Modelo.CitasModelo;
+import Modelo.PacienteModelo;
 import static Vista.PantallaPrincipal.escritorio;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author USUARIO
  */
 public class ConsultarCitasMedicas extends javax.swing.JInternalFrame {
-
+    DefaultTableModel modelo = new DefaultTableModel();
+    ArrayList<Object[]> listaFilas = new ArrayList<>();
     /**
      * Creates new form ConsultarCitasMedicas
      */
@@ -36,7 +45,8 @@ public class ConsultarCitasMedicas extends javax.swing.JInternalFrame {
         btnRegresar = new javax.swing.JButton();
         btnSiguiente = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tbPersona = new javax.swing.JTable();
+        ConfirmarAgenda = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -55,9 +65,6 @@ public class ConsultarCitasMedicas extends javax.swing.JInternalFrame {
         paciente.setForeground(new java.awt.Color(233, 133, 70));
         paciente.setText("CITA MEDICA");
 
-        LogoPaciente.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Documents\\MediMeetup\\src\\main\\resource\\Imagenes\\90.Medico.jpg")); // NOI18N
-
-        btnRegresar.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Documents\\MediMeetup\\src\\main\\resource\\Imagenes\\48.FlechaR.png")); // NOI18N
         btnRegresar.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         btnRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -65,7 +72,6 @@ public class ConsultarCitasMedicas extends javax.swing.JInternalFrame {
             }
         });
 
-        btnSiguiente.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Documents\\MediMeetup\\src\\main\\resource\\Imagenes\\48.FlechaV.png")); // NOI18N
         btnSiguiente.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         btnSiguiente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -73,7 +79,7 @@ public class ConsultarCitasMedicas extends javax.swing.JInternalFrame {
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tbPersona.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
@@ -84,12 +90,32 @@ public class ConsultarCitasMedicas extends javax.swing.JInternalFrame {
                 "Nombre", "Cedula", "Genero", "Tipo Sangre", "Fecha Cita Medica", "Hora Cita", "Consultorio"
             }
         ));
-        jScrollPane2.setViewportView(jTable1);
+        jScrollPane2.setViewportView(tbPersona);
+
+        ConfirmarAgenda.setBackground(new java.awt.Color(102, 153, 255));
+        ConfirmarAgenda.setFont(new java.awt.Font("Trebuchet MS", 1, 30)); // NOI18N
+        ConfirmarAgenda.setText("Consultar");
+        ConfirmarAgenda.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 204), 4, true));
+        ConfirmarAgenda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ConfirmarAgendaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 650, Short.MAX_VALUE)
+                .addComponent(btnSiguiente, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(221, 221, 221))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(ConfirmarAgenda, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(439, 439, 439))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -103,14 +129,8 @@ public class ConsultarCitasMedicas extends javax.swing.JInternalFrame {
                         .addGap(103, 103, 103)
                         .addComponent(LogoPaciente))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnSiguiente, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(221, 221, 221))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(68, 68, 68)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 915, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(70, 70, 70)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 915, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -125,9 +145,11 @@ public class ConsultarCitasMedicas extends javax.swing.JInternalFrame {
                         .addComponent(CancelarCita, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(paciente, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(87, 87, 87)
+                .addGap(61, 61, 61)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 116, Short.MAX_VALUE)
+                .addGap(38, 38, 38)
+                .addComponent(ConfirmarAgenda, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(btnSiguiente)
@@ -143,17 +165,13 @@ public class ConsultarCitasMedicas extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1056, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1068, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 633, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 12, Short.MAX_VALUE))
         );
 
         pack();
@@ -167,16 +185,54 @@ public class ConsultarCitasMedicas extends javax.swing.JInternalFrame {
         this.dispose();
     }//GEN-LAST:event_btnRegresarActionPerformed
 
+    private void ConfirmarAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmarAgendaActionPerformed
+        CitasControlador pC = new CitasControlador();
+        ArrayList<Object[]> listaFilass = pC.datosCita();
+        this.limpiarTabla();
+        for (Object[] listaFila : listaFilass) {
+            modelo.addRow(listaFila);
+            }
+        tbPersona.setModel(modelo); 
+        this.cargarTabla();
+        MenuPaciente ventanaMP = new MenuPaciente();
+        escritorio.add(ventanaMP);
+        ventanaMP.show();
+        
+    }//GEN-LAST:event_ConfirmarAgendaActionPerformed
+      
+    private void limpiarTabla() {
+        int a = modelo.getRowCount() - 1;  //Índices van de 0 a n-1
+        //System.out.println("Tabla "+a);   //Para mostrar por consola el resultado
+        for (int i = a; i >= 0; i--) {
+
+            //System.out.println("i "+i);    //Para mostrar por consola el resultado
+            modelo.removeRow(i);
+        }
+    }
+    
+    private void cargarTabla(){
+        CitasControlador pC = new CitasControlador();
+        ArrayList<Object[]> lista = pC.datosCita();
+        for (Object[] filas : lista) {
+            modelo.addRow(filas);
+        }
+      
+        tbPersona.setModel(modelo);
+        
+    }
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CancelarCita;
+    private javax.swing.JButton ConfirmarAgenda;
     private javax.swing.JLabel LogoPaciente;
     private javax.swing.JButton btnRegresar;
     private javax.swing.JButton btnSiguiente;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel paciente;
+    private javax.swing.JTable tbPersona;
     // End of variables declaration//GEN-END:variables
 }

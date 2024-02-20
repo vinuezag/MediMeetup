@@ -4,6 +4,8 @@
  */
 package Vista;
 
+import Controlador.UsuariosControlador;
+import Modelo.UsuarioModelo;
 import static Vista.PantallaPrincipal.escritorio;
 import java.awt.Color;
 
@@ -34,9 +36,11 @@ public class RecuperarClave extends javax.swing.JInternalFrame {
         Titulo = new javax.swing.JLabel();
         btnObtenerClave = new javax.swing.JButton();
         PrimerasLetrasNombre = new javax.swing.JLabel();
-        txtNombre = new javax.swing.JTextField();
+        txtusuario = new javax.swing.JTextField();
         NumCedula = new javax.swing.JLabel();
-        txtCedula = new javax.swing.JTextField();
+        nuevacontraseña = new javax.swing.JTextField();
+        NumCedula1 = new javax.swing.JLabel();
+        txtpregunta = new javax.swing.JTextField();
         btnSiguiente = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(241, 241, 241));
@@ -55,27 +59,35 @@ public class RecuperarClave extends javax.swing.JInternalFrame {
         btnObtenerClave.setBackground(new java.awt.Color(0, 153, 153));
         btnObtenerClave.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         btnObtenerClave.setForeground(new java.awt.Color(255, 255, 255));
-        btnObtenerClave.setText("Obtener Contraseña!!");
+        btnObtenerClave.setText("Guardar Contraseña!!");
         btnObtenerClave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnObtenerClaveActionPerformed(evt);
             }
         });
 
-        PrimerasLetrasNombre.setText("Primer Nombre");
+        PrimerasLetrasNombre.setText("Usuario");
 
-        txtNombre.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-        txtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtusuario.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        txtusuario.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtNombreKeyPressed(evt);
+                txtusuarioKeyPressed(evt);
             }
         });
 
-        NumCedula.setText("Numero de  Cedula");
+        NumCedula.setText("Pregunta de seguridad");
 
-        txtCedula.addKeyListener(new java.awt.event.KeyAdapter() {
+        nuevacontraseña.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtCedulaKeyPressed(evt);
+                nuevacontraseñaKeyPressed(evt);
+            }
+        });
+
+        NumCedula1.setText("Nueva Clave");
+
+        txtpregunta.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtpreguntaKeyPressed(evt);
             }
         });
 
@@ -84,24 +96,28 @@ public class RecuperarClave extends javax.swing.JInternalFrame {
         ultimosDigitosCedulaLayout.setHorizontalGroup(
             ultimosDigitosCedulaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ultimosDigitosCedulaLayout.createSequentialGroup()
-                .addGap(135, 135, 135)
-                .addComponent(btnObtenerClave)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ultimosDigitosCedulaLayout.createSequentialGroup()
                 .addContainerGap(38, Short.MAX_VALUE)
                 .addGroup(ultimosDigitosCedulaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(ultimosDigitosCedulaLayout.createSequentialGroup()
-                        .addComponent(Titulo)
-                        .addGap(36, 36, 36))
-                    .addGroup(ultimosDigitosCedulaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, ultimosDigitosCedulaLayout.createSequentialGroup()
-                            .addComponent(NumCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtCedula))
-                        .addGroup(ultimosDigitosCedulaLayout.createSequentialGroup()
-                            .addComponent(PrimerasLetrasNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ultimosDigitosCedulaLayout.createSequentialGroup()
+                        .addGroup(ultimosDigitosCedulaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Titulo)
+                            .addGroup(ultimosDigitosCedulaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, ultimosDigitosCedulaLayout.createSequentialGroup()
+                                    .addComponent(NumCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(txtpregunta))
+                                .addGroup(ultimosDigitosCedulaLayout.createSequentialGroup()
+                                    .addComponent(PrimerasLetrasNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(txtusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(ultimosDigitosCedulaLayout.createSequentialGroup()
+                                .addComponent(NumCedula1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(nuevacontraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(24, 24, 24))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ultimosDigitosCedulaLayout.createSequentialGroup()
+                        .addComponent(btnObtenerClave)
+                        .addGap(128, 128, 128))))
         );
         ultimosDigitosCedulaLayout.setVerticalGroup(
             ultimosDigitosCedulaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -111,17 +127,20 @@ public class RecuperarClave extends javax.swing.JInternalFrame {
                 .addGap(46, 46, 46)
                 .addGroup(ultimosDigitosCedulaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(PrimerasLetrasNombre)
-                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtusuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(ultimosDigitosCedulaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(NumCedula)
-                    .addComponent(txtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
+                    .addComponent(txtpregunta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(ultimosDigitosCedulaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(NumCedula1)
+                    .addComponent(nuevacontraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
                 .addComponent(btnObtenerClave)
-                .addGap(36, 36, 36))
+                .addContainerGap(76, Short.MAX_VALUE))
         );
 
-        btnSiguiente.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Documents\\MediMeetup\\src\\main\\resource\\Imagenes\\48.FlechaV.png")); // NOI18N
         btnSiguiente.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         btnSiguiente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -134,7 +153,7 @@ public class RecuperarClave extends javax.swing.JInternalFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(40, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(ultimosDigitosCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -150,7 +169,7 @@ public class RecuperarClave extends javax.swing.JInternalFrame {
                 .addComponent(ultimosDigitosCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnSiguiente)
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addContainerGap(7, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -170,10 +189,17 @@ public class RecuperarClave extends javax.swing.JInternalFrame {
     private void btnObtenerClaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnObtenerClaveActionPerformed
         
         //ENVIAR UN MENSAJE CON LA CONTRASEÑA
+        UsuarioModelo usuario=new UsuarioModelo(txtusuario.getText(), nuevacontraseña.getText(), 
+                txtpregunta.getText());
+        UsuariosControlador usuariocon=new UsuariosControlador();
+        usuariocon.actualizarUsuario(usuario);
+        MenuMedico ventanaMM = new MenuMedico();
+           escritorio.add(ventanaMM);
+           ventanaMM.show(); 
     }//GEN-LAST:event_btnObtenerClaveActionPerformed
 
-    private void txtNombreKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyPressed
-        String nombre = txtNombre.getText();
+    private void txtusuarioKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtusuarioKeyPressed
+        String nombre = txtusuario.getText();
     
     String validarNombre = "^[A-Z][a-z]+$";
     
@@ -182,10 +208,10 @@ public class RecuperarClave extends javax.swing.JInternalFrame {
         } else {
             PrimerasLetrasNombre.setForeground(Color.RED);
         }
-    }//GEN-LAST:event_txtNombreKeyPressed
+    }//GEN-LAST:event_txtusuarioKeyPressed
 
-    private void txtCedulaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCedulaKeyPressed
-        String cedula = txtCedula.getText();
+    private void nuevacontraseñaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nuevacontraseñaKeyPressed
+        String cedula = nuevacontraseña.getText();
     
     String validarCedula = "^[0-9]{10}$";
     
@@ -194,7 +220,7 @@ public class RecuperarClave extends javax.swing.JInternalFrame {
         } else {
             ultimosDigitosCedula.setForeground(Color.RED);
         }
-    }//GEN-LAST:event_txtCedulaKeyPressed
+    }//GEN-LAST:event_nuevacontraseñaKeyPressed
 
     private void btnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguienteActionPerformed
         MenuMedico ventanaMM = new MenuMedico();
@@ -202,16 +228,22 @@ public class RecuperarClave extends javax.swing.JInternalFrame {
         ventanaMM.show();
     }//GEN-LAST:event_btnSiguienteActionPerformed
 
+    private void txtpreguntaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtpreguntaKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtpreguntaKeyPressed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel NumCedula;
+    private javax.swing.JLabel NumCedula1;
     private javax.swing.JLabel PrimerasLetrasNombre;
     private javax.swing.JLabel Titulo;
     private javax.swing.JButton btnObtenerClave;
     private javax.swing.JButton btnSiguiente;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField txtCedula;
-    private javax.swing.JTextField txtNombre;
+    private javax.swing.JTextField nuevacontraseña;
+    private javax.swing.JTextField txtpregunta;
+    private javax.swing.JTextField txtusuario;
     private javax.swing.JPanel ultimosDigitosCedula;
     // End of variables declaration//GEN-END:variables
 }

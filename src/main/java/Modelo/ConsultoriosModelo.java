@@ -40,9 +40,6 @@ public class ConsultoriosModelo extends MedicoModelo {
         this.piso = piso;
     }
 
-    public int getIdconsultorio() {
-        return idconsultorio;
-    }
 
     public void setIdconsultorio(int idconsultorio) {
         this.idconsultorio = idconsultorio;

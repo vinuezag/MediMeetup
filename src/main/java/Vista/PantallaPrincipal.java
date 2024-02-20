@@ -156,7 +156,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private void btnAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminActionPerformed
         // TODO add your handling code here:
         try {
-        LoginMedico ventanaLM = new LoginMedico();
+        LoginAdministrador ventanaLM = new LoginAdministrador();
         escritorio.add(ventanaLM);
         ventanaLM.setVisible(true);
     } catch (Exception e) {

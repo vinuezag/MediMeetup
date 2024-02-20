@@ -114,10 +114,7 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="btnCancelarCita" pref="0" max="32767" attributes="0"/>
-                                      <Group type="102" attributes="0">
-                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                          <Component id="btnReagendarCita" min="-2" max="-2" attributes="0"/>
-                                      </Group>
+                                      <Component id="btnReagendarCita" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
@@ -141,11 +138,6 @@
       </Layout>
       <SubComponents>
         <Component class="javax.swing.JLabel" name="jLabel1">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\USUARIO\Documents\MediMeetup\src\main\resource\Imagenes\400.Paciente.jpg"/>
-            </Property>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="menu">
           <Properties>
@@ -174,9 +166,6 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Trebuchet MS" size="18" style="1"/>
             </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\USUARIO\Documents\MediMeetup\src\main\resource\Imagenes\210.AgregarCita.jpg"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Agendar Cita Medica"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
             <Property name="verticalTextPosition" type="int" value="1"/>
@@ -189,9 +178,6 @@
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Trebuchet MS" size="18" style="1"/>
-            </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\USUARIO\Documents\MediMeetup\src\main\resource\Imagenes\210.BuscarCita.jpg"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Consultar Cita Medica"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
@@ -206,9 +192,6 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Trebuchet MS" size="16" style="1"/>
             </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\USUARIO\Documents\MediMeetup\src\main\resource\Imagenes\210.ModificarCita.jpg"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Reagendar Cita Medica"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
             <Property name="verticalTextPosition" type="int" value="1"/>
@@ -221,9 +204,6 @@
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Trebuchet MS" size="18" style="1"/>
-            </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\USUARIO\Documents\MediMeetup\src\main\resource\Imagenes\210.EliminarCita.jpg"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Cancelar Cita Medica"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
@@ -238,26 +218,15 @@
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="ff" type="rgb"/>
             </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\USUARIO\Documents\MediMeetup\src\main\resource\Imagenes\48.Salir.png"/>
-            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSalidaActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lblNombreCedula">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\USUARIO\Documents\MediMeetup\src\main\resource\Imagenes\70.MenbreteP.jpg"/>
-            </Property>
-          </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="btnModificarP">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\USUARIO\Documents\MediMeetup\src\main\resource\Imagenes\128.jpg"/>
-            </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
                 <EmptyBorder/>

@@ -4,14 +4,19 @@
  */
 package Vista;
 
+import Controlador.MedicoControlador;
+import Modelo.MedicoModelo;
 import static Vista.PantallaPrincipal.escritorio;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author USUARIO
  */
 public class BuscarMedico extends javax.swing.JInternalFrame {
-
+ArrayList<MedicoModelo> listaPersonaModel = new ArrayList<>();
+    DefaultTableModel modelo = new DefaultTableModel();
     /**
      * Creates new form BuscarMedico
      */
@@ -36,10 +41,10 @@ public class BuscarMedico extends javax.swing.JInternalFrame {
         btnRegresar = new javax.swing.JButton();
         btnSiguiente = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblPersonas = new javax.swing.JTable();
         btnBuscar = new javax.swing.JButton();
         EspecialidadMedica = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        txtCedula = new javax.swing.JTextField();
 
         setClosable(true);
         setIconifiable(true);
@@ -58,9 +63,6 @@ public class BuscarMedico extends javax.swing.JInternalFrame {
         PersonalMedico.setForeground(new java.awt.Color(143, 78, 242));
         PersonalMedico.setText("PERSONAL MEDICO");
 
-        LogoPaciente.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Documents\\MediMeetup\\src\\main\\resource\\Imagenes\\90.Admin.jpg")); // NOI18N
-
-        btnRegresar.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Documents\\MediMeetup\\src\\main\\resource\\Imagenes\\48.FlechaR.png")); // NOI18N
         btnRegresar.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         btnRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -68,7 +70,6 @@ public class BuscarMedico extends javax.swing.JInternalFrame {
             }
         });
 
-        btnSiguiente.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Documents\\MediMeetup\\src\\main\\resource\\Imagenes\\48.FlechaV.png")); // NOI18N
         btnSiguiente.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         btnSiguiente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,7 +77,7 @@ public class BuscarMedico extends javax.swing.JInternalFrame {
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblPersonas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -87,7 +88,7 @@ public class BuscarMedico extends javax.swing.JInternalFrame {
                 "Nombre", "Especialidad", "Genero", "Cargo", "Fecha de Contratacion"
             }
         ));
-        jScrollPane2.setViewportView(jTable1);
+        jScrollPane2.setViewportView(tblPersonas);
 
         btnBuscar.setBackground(new java.awt.Color(0, 102, 255));
         btnBuscar.setFont(new java.awt.Font("Trebuchet MS", 1, 30)); // NOI18N
@@ -100,10 +101,7 @@ public class BuscarMedico extends javax.swing.JInternalFrame {
         });
 
         EspecialidadMedica.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        EspecialidadMedica.setText("Especialidad Medica");
-
-        jComboBox1.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        EspecialidadMedica.setText("Cedula del Medico");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -112,8 +110,6 @@ public class BuscarMedico extends javax.swing.JInternalFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(226, 226, 226)
-                .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnSiguiente, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(221, 221, 221))
@@ -130,53 +126,51 @@ public class BuscarMedico extends javax.swing.JInternalFrame {
                                 .addGap(95, 95, 95)
                                 .addComponent(PersonalMedico)))
                         .addGap(151, 151, 151)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(EspecialidadMedica, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(EspecialidadMedica)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(47, 47, 47)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 915, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(906, Short.MAX_VALUE))
+                        .addGap(40, 40, 40)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 915, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(425, 425, 425)
+                        .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(913, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGap(0, 102, Short.MAX_VALUE)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(372, 372, 372))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(LogoPaciente))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(LogoPaciente))
+                                .addGap(47, 47, 47)
+                                .addComponent(lblComsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGap(47, 47, 47)
-                                        .addComponent(lblComsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGap(49, 49, 49)
-                                        .addComponent(EspecialidadMedica)))
+                                .addGap(49, 49, 49)
+                                .addComponent(EspecialidadMedica)))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(PersonalMedico, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(67, 67, 67)))
+                                .addComponent(PersonalMedico, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(21, 21, 21)
+                                .addComponent(txtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(47, 47, 47)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addComponent(btnSiguiente)
-                                .addGap(126, 126, 126))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addComponent(btnRegresar)
-                                .addGap(111, 111, 111))))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(btnSiguiente)
+                        .addGap(126, 126, 126))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(btnRegresar)
+                        .addGap(111, 111, 111))))
         );
 
         jScrollPane1.setViewportView(jPanel2);
@@ -210,9 +204,13 @@ public class BuscarMedico extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnSiguienteActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-
-        //MENSAJE DE CONFIRMACION
-
+        String cedula = txtCedula.getText();
+        MedicoControlador pC = new MedicoControlador();
+        ArrayList<Object[]> listaFilas = pC.buscarMedico(cedula);
+        for (Object[] listaFila : listaFilas) {
+            modelo.addRow(listaFila);
+            }
+        tblPersonas.setModel(modelo);
         MenuAdministrador ventanaMP = new MenuAdministrador();
         escritorio.add(ventanaMP);
         ventanaMP.show();
@@ -226,11 +224,11 @@ public class BuscarMedico extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnRegresar;
     private javax.swing.JButton btnSiguiente;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel lblComsultar;
+    private javax.swing.JTable tblPersonas;
+    private javax.swing.JTextField txtCedula;
     // End of variables declaration//GEN-END:variables
 }

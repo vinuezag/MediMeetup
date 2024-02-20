@@ -48,8 +48,6 @@ public class MenuAdministrador extends javax.swing.JInternalFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setAutoscrolls(true);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Documents\\MediMeetup\\src\\main\\resource\\Imagenes\\400.Amin.jpg")); // NOI18N
-
         menu.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
         menu.setForeground(new java.awt.Color(48, 44, 44));
         menu.setText("MENU");
@@ -59,7 +57,6 @@ public class MenuAdministrador extends javax.swing.JInternalFrame {
         Administrador.setText("ADMINISTRADOR");
 
         btnAgregarMedico.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        btnAgregarMedico.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Documents\\MediMeetup\\src\\main\\resource\\Imagenes\\210.AgregarUser.jpg")); // NOI18N
         btnAgregarMedico.setText("Agregar Personal");
         btnAgregarMedico.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnAgregarMedico.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
@@ -70,7 +67,6 @@ public class MenuAdministrador extends javax.swing.JInternalFrame {
         });
 
         btnBuscarMedico.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        btnBuscarMedico.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Documents\\MediMeetup\\src\\main\\resource\\Imagenes\\210.BuscarUser.jpg")); // NOI18N
         btnBuscarMedico.setText("Consultar Personal");
         btnBuscarMedico.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnBuscarMedico.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
@@ -81,7 +77,6 @@ public class MenuAdministrador extends javax.swing.JInternalFrame {
         });
 
         btnModificarMedico.setFont(new java.awt.Font("Trebuchet MS", 1, 17)); // NOI18N
-        btnModificarMedico.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Documents\\MediMeetup\\src\\main\\resource\\Imagenes\\210.ModificarUser.jpg")); // NOI18N
         btnModificarMedico.setText("Modificar Información");
         btnModificarMedico.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnModificarMedico.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
@@ -92,7 +87,6 @@ public class MenuAdministrador extends javax.swing.JInternalFrame {
         });
 
         btnEliminarMedico.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        btnEliminarMedico.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Documents\\MediMeetup\\src\\main\\resource\\Imagenes\\210.EliminarUser.jpg")); // NOI18N
         btnEliminarMedico.setText("Eliminar Personal");
         btnEliminarMedico.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnEliminarMedico.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
@@ -103,14 +97,11 @@ public class MenuAdministrador extends javax.swing.JInternalFrame {
         });
 
         btnSalida.setBackground(new java.awt.Color(255, 0, 0));
-        btnSalida.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Documents\\MediMeetup\\src\\main\\resource\\Imagenes\\48.Salir.png")); // NOI18N
         btnSalida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalidaActionPerformed(evt);
             }
         });
-
-        lblNombreCedula.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Documents\\MediMeetup\\src\\main\\resource\\Imagenes\\70,Membrete.jpg")); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -161,9 +152,7 @@ public class MenuAdministrador extends javax.swing.JInternalFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(btnEliminarMedico, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(0, 0, Short.MAX_VALUE)
-                                        .addComponent(btnModificarMedico))))
+                                    .addComponent(btnModificarMedico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel1)

@@ -14,6 +14,8 @@ public class MedicoModelo extends PersonaModelo{
     private String cargo;
     private String fechainicio;
     private String fechafin;
+    private String idagendas;
+    private String idconsultorio;
 
     public MedicoModelo() {
     }
@@ -30,7 +32,6 @@ public class MedicoModelo extends PersonaModelo{
         this.fechainicio = fechainicio;
         this.fechafin = fechafin;
     }
-
     public MedicoModelo(int idmedico, String especialidad, String cargo, String fechainicio, String fechafin, String nombre,
             String cedula, String apellido, String correoe, int celular, String tiposangre, String fechanacimiento, String dirreccion, String genero) {
         super(nombre, cedula, apellido, correoe, celular, tiposangre, fechanacimiento, dirreccion, genero);
@@ -39,6 +40,18 @@ public class MedicoModelo extends PersonaModelo{
         this.cargo = cargo;
         this.fechainicio = fechainicio;
         this.fechafin = fechafin;
+    }
+
+    public MedicoModelo(int idmedico, String especialidad, String cargo, String fechainicio, String fechafin, String nombre,
+            String cedula, String apellido, String correoe, int celular, String tiposangre, String fechanacimiento, String dirreccion, String genero,String idagendas,String idconsultorio) {
+        super(nombre, cedula, apellido, correoe, celular, tiposangre, fechanacimiento, dirreccion, genero);
+        this.idmedico = idmedico;
+        this.especialidad = especialidad;
+        this.cargo = cargo;
+        this.fechainicio = fechainicio;
+        this.fechafin = fechafin;
+        this.idagendas=idagendas;
+        this.idconsultorio=idconsultorio;
     }
 
     public int getIdmedico() {
@@ -79,6 +92,22 @@ public class MedicoModelo extends PersonaModelo{
 
     public void setFechafin(String fechafin) {
         this.fechafin = fechafin;
+    }
+
+    public String getIdagendas() {
+        return idagendas;
+    }
+
+    public void setIdagendas(String idagendas) {
+        this.idagendas = idagendas;
+    }
+
+    public String getIdconsultorio() {
+        return idconsultorio;
+    }
+
+    public void setIdconsultorio(String idconsultorio) {
+        this.idconsultorio = idconsultorio;
     }
     
     

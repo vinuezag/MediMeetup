@@ -58,15 +58,12 @@ public class PersonaControlador {
             String sql = "call sp_BuscarPersona('%"+cedula+"%');";
             ejecutar = (PreparedStatement) conectar.prepareCall(sql);
             res = ejecutar.executeQuery();
-            int cont = 1;
             while (res.next()) {
                 Object[] obpersona = new Object[9];
                 for (int i = 0; i < 9; i++) {
                     obpersona[i] = res.getObject(i+1);
                 }
-                obpersona[0]=cont;
                 listaObject.add(obpersona);
-                cont++;
             }
             ejecutar.close();
             return listaObject;

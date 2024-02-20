@@ -194,16 +194,14 @@ public class AgendarCita extends javax.swing.JInternalFrame {
                     .addComponent(LogoPaciente))
                 .addGap(26, 26, 26)
                 .addComponent(ConfirmarAgenda, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnRegresar)
                         .addGap(19, 19, 19))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
                         .addComponent(btnSiguiente)
-                        .addContainerGap(13, Short.MAX_VALUE))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(87, 87, 87)
@@ -238,8 +236,8 @@ public class AgendarCita extends javax.swing.JInternalFrame {
 
     private void ConfirmarAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmarAgendaActionPerformed
         CitasControlador citasControlador = new CitasControlador();
-        PacienteControlador pacienteControlador = new PacienteControlador();
-        MedicoControlador medicoControlador = new MedicoControlador();
+       PacienteControlador pacienteControlador = new PacienteControlador();
+       MedicoControlador medicoControlador = new MedicoControlador();
         String cedula = txtCedula.getText();
         String hora = txtHora.getText();
         String dia = txtDia.getText();

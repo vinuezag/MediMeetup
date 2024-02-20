@@ -39,9 +39,9 @@ public class DiagnosticoControlador {
     public DiagnosticoModelo getDiagnostico() {
         return diagnostico;
     }
-    public void IngresarCita(DiagnosticoModelo Dm, PacienteModelo pm) {
+    public void IngresarDiagnostico(DiagnosticoModelo Dm, PacienteModelo pm) {
         try {
-            String sql = "call sp_InsertarCita('" + pm.getCedula()+ "','" + Dm.getDiagnostico()+ "','" 
+            String sql = "call sp_IngresarDiagnostico('" + pm.getCedula()+ "','" + Dm.getDiagnostico()+ "','" 
                     + Dm.getReceta()+ "');";
             ejecutar = (PreparedStatement) conectar.prepareCall(sql);
             int resultado = ejecutar.executeUpdate();

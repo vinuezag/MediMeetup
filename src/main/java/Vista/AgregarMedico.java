@@ -4,6 +4,11 @@
  */
 package Vista;
 
+import Controlador.MedicoControlador;
+import Controlador.PacienteControlador;
+import Modelo.AgendasModelo;
+import Modelo.MedicoModelo;
+import Modelo.PacienteModelo;
 import static Vista.PantallaPrincipal.escritorio;
 import java.awt.Color;
 
@@ -46,13 +51,12 @@ public class AgregarMedico extends javax.swing.JInternalFrame {
         Medicamentos = new javax.swing.JLabel();
         Cargo = new javax.swing.JLabel();
         Direccion = new javax.swing.JLabel();
-        txtNombres = new javax.swing.JTextField();
         txtCedula = new javax.swing.JTextField();
         txtCelular = new javax.swing.JTextField();
         txtEmail = new javax.swing.JTextField();
         txtFechaN = new javax.swing.JTextField();
         txtDireccion = new javax.swing.JTextField();
-        txtApellidos = new javax.swing.JTextField();
+        txtNombres = new javax.swing.JTextField();
         CboxCargo = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtEspecialidad = new javax.swing.JTextArea();
@@ -70,8 +74,9 @@ public class AgregarMedico extends javax.swing.JInternalFrame {
         txtFechaContratacion = new javax.swing.JTextField();
         CheckFechaN = new javax.swing.JLabel();
         CheckFContratacion = new javax.swing.JLabel();
-        CboxSangre = new javax.swing.JComboBox<>();
         Guardar = new javax.swing.JButton();
+        ComTipoS = new javax.swing.JComboBox<>();
+        txtApellidos1 = new javax.swing.JTextField();
 
         setClosable(true);
         setIconifiable(true);
@@ -86,7 +91,6 @@ public class AgregarMedico extends javax.swing.JInternalFrame {
         CancelarCita.setForeground(new java.awt.Color(48, 44, 44));
         CancelarCita.setText("DATOS PERSONALES");
 
-        btnRegresar.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Documents\\MediMeetup\\src\\main\\resource\\Imagenes\\48.FlechaR.png")); // NOI18N
         btnRegresar.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         btnRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,9 +98,6 @@ public class AgregarMedico extends javax.swing.JInternalFrame {
             }
         });
 
-        LogoPaciente.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Documents\\MediMeetup\\src\\main\\resource\\Imagenes\\90.Admin.jpg")); // NOI18N
-
-        btnSiguiente.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Documents\\MediMeetup\\src\\main\\resource\\Imagenes\\48.FlechaV.png")); // NOI18N
         btnSiguiente.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         btnSiguiente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -136,15 +137,6 @@ public class AgregarMedico extends javax.swing.JInternalFrame {
 
         Direccion.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Direccion.setText("Direccion");
-
-        txtNombres.setEditable(false);
-        txtNombres.setBackground(new java.awt.Color(236, 236, 236));
-        txtNombres.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-        txtNombres.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtNombresKeyPressed(evt);
-            }
-        });
 
         txtCedula.setBackground(new java.awt.Color(236, 236, 236));
         txtCedula.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
@@ -186,16 +178,16 @@ public class AgregarMedico extends javax.swing.JInternalFrame {
             }
         });
 
-        txtApellidos.setBackground(new java.awt.Color(236, 236, 236));
-        txtApellidos.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-        txtApellidos.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtNombres.setBackground(new java.awt.Color(236, 236, 236));
+        txtNombres.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        txtNombres.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtApellidosKeyPressed(evt);
+                txtNombresKeyPressed(evt);
             }
         });
 
         CboxCargo.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-        CboxCargo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        CboxCargo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tratante ", "Jefe departamental", " " }));
 
         txtEspecialidad.setBackground(new java.awt.Color(236, 236, 236));
         txtEspecialidad.setColumns(20);
@@ -228,9 +220,6 @@ public class AgregarMedico extends javax.swing.JInternalFrame {
             }
         });
 
-        CboxSangre.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-        CboxSangre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
         Guardar.setBackground(new java.awt.Color(102, 153, 255));
         Guardar.setFont(new java.awt.Font("Trebuchet MS", 1, 30)); // NOI18N
         Guardar.setText("Guardar");
@@ -238,6 +227,17 @@ public class AgregarMedico extends javax.swing.JInternalFrame {
         Guardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 GuardarActionPerformed(evt);
+            }
+        });
+
+        ComTipoS.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        ComTipoS.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A+", "A-", "O-", "O+", "AB+", "AB-", "B-", "B+" }));
+
+        txtApellidos1.setBackground(new java.awt.Color(236, 236, 236));
+        txtApellidos1.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        txtApellidos1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtApellidos1KeyPressed(evt);
             }
         });
 
@@ -268,15 +268,15 @@ public class AgregarMedico extends javax.swing.JInternalFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(CheckCed, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addComponent(txtNombres, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(CheckName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addGap(12, 12, 12)
-                                                .addComponent(txtApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addComponent(NombresPaciente, javax.swing.GroupLayout.Alignment.LEADING))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGap(171, 171, 171))
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(NombresPaciente)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                         .addComponent(CheckAp, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(numCedula, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtCelular, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -308,7 +308,7 @@ public class AgregarMedico extends javax.swing.JInternalFrame {
                                         .addComponent(FechaNacimiento)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(FormatoFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(CboxSangre, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(ComTipoS, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -349,6 +349,11 @@ public class AgregarMedico extends javax.swing.JInternalFrame {
                     .addGap(394, 394, 394)
                     .addComponent(CheckCel1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(901, Short.MAX_VALUE)))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(309, 309, 309)
+                    .addComponent(txtApellidos1, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(859, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -370,12 +375,14 @@ public class AgregarMedico extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(CheckName, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(CheckAp, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(15, 15, 15))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(txtNombres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(CheckName, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(CheckAp, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(15, 15, 15)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                         .addComponent(numCedula)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -400,7 +407,7 @@ public class AgregarMedico extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txtFechaContratacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(CboxSangre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(ComTipoS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(CheckFContratacion, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -429,12 +436,17 @@ public class AgregarMedico extends javax.swing.JInternalFrame {
                             .addComponent(btnRegresar)
                             .addComponent(btnSiguiente)))
                     .addComponent(Guardar, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(286, Short.MAX_VALUE))
+                .addContainerGap(334, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(347, 347, 347)
                     .addComponent(CheckCel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(588, Short.MAX_VALUE)))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(194, 194, 194)
+                    .addComponent(txtApellidos1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(741, Short.MAX_VALUE)))
         );
 
         jScrollPane2.setViewportView(jPanel1);
@@ -462,19 +474,6 @@ public class AgregarMedico extends javax.swing.JInternalFrame {
     private void btnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguienteActionPerformed
         this.dispose();
     }//GEN-LAST:event_btnSiguienteActionPerformed
-
-    private void txtNombresKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombresKeyPressed
-        String user = txtNombres.getText();
-        String validarNombre = "^[a-z]*[A-Z][a-z]*[A-Z][a-z]*$";
-
-        if (user.matches(validarNombre)) {
-            CheckName.setForeground(Color.GREEN);
-            CheckName.setText("✔");
-        } else {
-            CheckName.setForeground(Color.RED);
-            CheckName.setText("✘");
-        }
-    }//GEN-LAST:event_txtNombresKeyPressed
 
     private void txtCedulaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCedulaKeyPressed
         String user = txtCedula.getText();
@@ -542,8 +541,8 @@ public class AgregarMedico extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_txtDireccionKeyPressed
 
-    private void txtApellidosKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApellidosKeyPressed
-        String user = txtApellidos.getText();
+    private void txtNombresKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombresKeyPressed
+        String user = txtNombres.getText();
         String validarApellido = "^[a-z]*[A-Z][a-z]*[A-Z][a-z]*$";
 
         if (user.matches(validarApellido)) {
@@ -554,7 +553,7 @@ public class AgregarMedico extends javax.swing.JInternalFrame {
             CheckAp.setText("✘");
         }
 
-    }//GEN-LAST:event_txtApellidosKeyPressed
+    }//GEN-LAST:event_txtNombresKeyPressed
 
     private void txtFechaContratacionKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtFechaContratacionKeyPressed
         String user = txtFechaContratacion.getText();
@@ -570,13 +569,23 @@ public class AgregarMedico extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtFechaContratacionKeyPressed
 
     private void GuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarActionPerformed
-
-        //MENSAJE DE CONFIRMACION
-
+       String genero = (Masculino.isSelected() ? "Masculino" : "Femenino");
+       int celular=Integer.parseInt(txtCelular.getText());
+       String agenda="1";
+       String consultorio="2";
+       MedicoModelo mp= new MedicoModelo(0, txtEspecialidad.getText(), CboxCargo.getSelectedItem().toString(), txtFechaContratacion.getText(), null, 
+               txtNombres.getText(), txtCedula.getText(),  txtNombres.getText(), txtEmail.getText(), celular, ComTipoS.getSelectedItem().toString(), 
+               txtFechaN.getText(), txtDireccion.getText(), genero,agenda,consultorio);
+        MedicoControlador pc=new MedicoControlador();
+        pc.insertarMedico(mp);
         MenuAdministrador ventanaMP = new MenuAdministrador();
         escritorio.add(ventanaMP);
         ventanaMP.show();
     }//GEN-LAST:event_GuardarActionPerformed
+
+    private void txtApellidos1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApellidos1KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtApellidos1KeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -585,7 +594,6 @@ public class AgregarMedico extends javax.swing.JInternalFrame {
     private javax.swing.JLabel CancelarCita;
     private javax.swing.JLabel Cargo;
     private javax.swing.JComboBox<String> CboxCargo;
-    private javax.swing.JComboBox<String> CboxSangre;
     private javax.swing.JLabel CheckAp;
     private javax.swing.JLabel CheckCed;
     private javax.swing.JLabel CheckCel1;
@@ -594,6 +602,7 @@ public class AgregarMedico extends javax.swing.JInternalFrame {
     private javax.swing.JLabel CheckFContratacion;
     private javax.swing.JLabel CheckFechaN;
     private javax.swing.JLabel CheckName;
+    private javax.swing.JComboBox<String> ComTipoS;
     private javax.swing.JLabel Direccion;
     private javax.swing.JLabel FechaNacimiento;
     private javax.swing.JCheckBox Femenino;
@@ -614,7 +623,7 @@ public class AgregarMedico extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel numCedula;
-    private javax.swing.JTextField txtApellidos;
+    private javax.swing.JTextField txtApellidos1;
     private javax.swing.JTextField txtCedula;
     private javax.swing.JTextField txtCelular;
     private javax.swing.JTextField txtDireccion;

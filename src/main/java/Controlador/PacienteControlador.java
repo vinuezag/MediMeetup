@@ -73,28 +73,27 @@ public class PacienteControlador {
      }
      }
      public ArrayList<Object[]> buscarPaciente(String cedula) {
-            ArrayList<Object[]> listaObject=new ArrayList<>();
-        try {
-            String sql = "call sp_MostrarCitaPorCedula('%"+cedula+"%');";
-            ejecutar = (PreparedStatement) conectar.prepareCall(sql);
-            res = ejecutar.executeQuery();
-            int cont = 1;
-            while (res.next()) {
-                Object[] obpersona = new Object[6];
-                for (int i = 0; i < 6; i++) {
-                    obpersona[i] = res.getObject(i+1);
-                }
-                obpersona[0]=cont;
-                listaObject.add(obpersona);
-                cont++;
+             ArrayList<Object[]> listaObject = new ArrayList<>();
+    try {
+        String sql = "call sp_MostrarCitaPorCedula('%"+cedula+"%');";
+        ejecutar = (PreparedStatement) conectar.prepareCall(sql);
+        res = ejecutar.executeQuery();
+        int cont = 1;
+        while (res.next()) {
+            Object[] obpersona = new Object[7];
+            for (int i = 0; i < 7; i++) {
+                obpersona[i] = res.getObject(i+1);
             }
-            ejecutar.close();
-            return listaObject;
-           
-        } catch (SQLException e) {
-            System.out.println("ERROR SQL"+e);
+            obpersona[6] = cont;
+            listaObject.add(obpersona);
+            cont++;
         }
-        return null;
+        ejecutar.close();
+        return listaObject;
+    } catch (SQLException e) {
+        e.printStackTrace(); // Imprime el error para depuración
+        return new ArrayList<>(); // Devuelve una lista vacía en caso de error
+}
     }
     public void mostrarCita(String cedula, JLabel lblLugarConsultorio, JLabel lblPisoConsultorio,
             JLabel lblNombreMedico, JLabel lblEspecialidadMedico, JLabel lblHoraCita, JLabel lblDiaCita) {

@@ -8,6 +8,7 @@ import Controlador.PacienteControlador;
 import Modelo.PacienteModelo;
 import static Vista.PantallaPrincipal.escritorio;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -70,10 +71,14 @@ ArrayList<PacienteModelo> listaPersonaModel = new ArrayList<>();
         tblPersonas.setForeground(new java.awt.Color(204, 255, 255));
         tblPersonas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Lugar", "Piso", "Nombre Medico", "Especialidad Medico", "Hora", "Dia"
+                "Lugar", "Piso", "Nombre Medico", "Especialidad Medico", "Hora", "Dia", "Nro"
             }
         ));
         jScrollPane1.setViewportView(tblPersonas);
@@ -229,22 +234,26 @@ ArrayList<PacienteModelo> listaPersonaModel = new ArrayList<>();
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         String cedula = txtCedula.getText();
-PacienteControlador pa = new PacienteControlador();
-ArrayList<Object[]> listaFilas = pa.buscarPaciente(cedula);
+    PacienteControlador pa = new PacienteControlador();
+    ArrayList<Object[]> listaFilas = pa.buscarPaciente(cedula);
 
-if (listaFilas != null) {
     DefaultTableModel modelo = new DefaultTableModel();
-    // Agrega columnas al modelo si es necesario
+    modelo.addColumn("Lugar");
+    modelo.addColumn("Piso");
+    modelo.addColumn("Nombre Medico");
+    modelo.addColumn("Especialidad Medico");
+    modelo.addColumn("Hora");
+    modelo.addColumn("Dia");
 
-    for (Object[] listaFila : listaFilas) {
-        modelo.addRow(listaFila);
+    if (listaFilas != null && !listaFilas.isEmpty()) {
+        for (Object[] fila : listaFilas) {
+            modelo.addRow(fila);
+        }
+    } else {
+        JOptionPane.showMessageDialog(this, "No se encontraron citas para el paciente con la cédula especificada", "Información", JOptionPane.INFORMATION_MESSAGE);
     }
 
     tblPersonas.setModel(modelo);
-} else {
-    // Manejar el caso donde la lista de filas es nula
-    System.out.println("La lista de filas es nula");
-}
 
     }//GEN-LAST:event_jButton1ActionPerformed
 

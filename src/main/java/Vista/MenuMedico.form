@@ -109,8 +109,8 @@
                           <Component id="btnBuscarCita" min="-2" pref="235" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnReagendarCita" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="btnReagendarCita" min="-2" pref="38" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnSalida" min="-2" pref="64" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -119,26 +119,18 @@
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="lblNombreCedula" min="-2" pref="89" max="-2" attributes="0"/>
-                      <EmptySpace min="14" pref="184" max="32767" attributes="0"/>
+                      <EmptySpace min="14" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabel1">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\USUARIO\Documents\MediMeetup\src\main\resource\Imagenes\400.Medico.jpg"/>
-                </Property>
-              </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="btnAgendarCita">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Trebuchet MS" size="18" style="1"/>
-                </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\USUARIO\Documents\MediMeetup\src\main\resource\Imagenes\210.ConsultorioMedico.jpg"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Consultorio Medico"/>
                 <Property name="horizontalTextPosition" type="int" value="0"/>
@@ -153,9 +145,6 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Trebuchet MS" size="18" style="1"/>
                 </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\USUARIO\Documents\MediMeetup\src\main\resource\Imagenes\210.BuscarCitaMedica.jpg"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Consultar Cita Medica"/>
                 <Property name="horizontalTextPosition" type="int" value="0"/>
                 <Property name="verticalTextPosition" type="int" value="1"/>
@@ -168,9 +157,6 @@
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Trebuchet MS" size="16" style="1"/>
-                </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\USUARIO\Documents\MediMeetup\src\main\resource\Imagenes\210.BuscarPaciente.jpg"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Buscar Paciente"/>
                 <Property name="horizontalTextPosition" type="int" value="0"/>
@@ -185,20 +171,12 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="0" red="ff" type="rgb"/>
                 </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\USUARIO\Documents\MediMeetup\src\main\resource\Imagenes\48.Salir.png"/>
-                </Property>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSalidaActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="lblNombreCedula">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\USUARIO\Documents\MediMeetup\src\main\resource\Imagenes\70.MenbreteM.jpg"/>
-                </Property>
-              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="menu">
               <Properties>
