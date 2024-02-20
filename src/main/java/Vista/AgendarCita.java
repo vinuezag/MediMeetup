@@ -4,14 +4,21 @@
  */
 package Vista;
 
+import Controlador.CitasControlador;
+import Controlador.MedicoControlador;
+import Controlador.PacienteControlador;
+import Modelo.CitasModelo;
+import Modelo.MedicoModelo;
+import Modelo.PacienteModelo;
 import static Vista.PantallaPrincipal.escritorio;
+import java.awt.Color;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author USUARIO
  */
 public class AgendarCita extends javax.swing.JInternalFrame {
-
     /**
      * Creates new form AgendarCita
      */
@@ -33,49 +40,6 @@ public class AgendarCita extends javax.swing.JInternalFrame {
         jPanel1 = new javax.swing.JPanel();
         AgendarCita = new javax.swing.JLabel();
         paciente = new javax.swing.JLabel();
-        TablaHorario = new javax.swing.JPanel();
-        Lunes = new javax.swing.JButton();
-        Viernes = new javax.swing.JButton();
-        Jueves = new javax.swing.JButton();
-        Miercoles = new javax.swing.JButton();
-        Martes = new javax.swing.JButton();
-        Lunes6 = new javax.swing.JButton();
-        Lunes5 = new javax.swing.JButton();
-        Lunes4 = new javax.swing.JButton();
-        Lunes3 = new javax.swing.JButton();
-        Lunes2 = new javax.swing.JButton();
-        Lunes1 = new javax.swing.JButton();
-        Horario6 = new javax.swing.JButton();
-        Horario5 = new javax.swing.JButton();
-        Horario4 = new javax.swing.JButton();
-        Horario3 = new javax.swing.JButton();
-        Horario2 = new javax.swing.JButton();
-        Horario1 = new javax.swing.JButton();
-        Horario = new javax.swing.JButton();
-        Martes1 = new javax.swing.JButton();
-        Miercoles1 = new javax.swing.JButton();
-        Jueves1 = new javax.swing.JButton();
-        Viernes1 = new javax.swing.JButton();
-        Martes2 = new javax.swing.JButton();
-        Miercoles2 = new javax.swing.JButton();
-        Jueves2 = new javax.swing.JButton();
-        Viernes2 = new javax.swing.JButton();
-        Martes3 = new javax.swing.JButton();
-        Miercoles3 = new javax.swing.JButton();
-        Jueves3 = new javax.swing.JButton();
-        Viernes3 = new javax.swing.JButton();
-        Martes4 = new javax.swing.JButton();
-        Miercoles4 = new javax.swing.JButton();
-        Jueves4 = new javax.swing.JButton();
-        Viernes4 = new javax.swing.JButton();
-        Martes5 = new javax.swing.JButton();
-        Miercoles5 = new javax.swing.JButton();
-        Jueves5 = new javax.swing.JButton();
-        Viernes5 = new javax.swing.JButton();
-        Martes6 = new javax.swing.JButton();
-        Miercoles6 = new javax.swing.JButton();
-        Jueves6 = new javax.swing.JButton();
-        Viernes6 = new javax.swing.JButton();
         lblNombre = new javax.swing.JLabel();
         lblCedula = new javax.swing.JLabel();
         LogoPaciente = new javax.swing.JLabel();
@@ -84,6 +48,12 @@ public class AgendarCita extends javax.swing.JInternalFrame {
         ConfirmarAgenda = new javax.swing.JButton();
         btnRegresar = new javax.swing.JButton();
         btnSiguiente = new javax.swing.JButton();
+        txtCedula = new javax.swing.JTextField();
+        Hora = new javax.swing.JLabel();
+        txtHora = new javax.swing.JTextField();
+        txtDia = new javax.swing.JTextField();
+        EspecialidadMedica2 = new javax.swing.JLabel();
+        Hora1 = new javax.swing.JLabel();
 
         setClosable(true);
         setIconifiable(true);
@@ -102,442 +72,15 @@ public class AgendarCita extends javax.swing.JInternalFrame {
         paciente.setForeground(new java.awt.Color(51, 153, 255));
         paciente.setText("PACIENTE");
 
-        TablaHorario.setBackground(new java.awt.Color(250, 250, 250));
-
-        Lunes.setBackground(new java.awt.Color(0, 102, 102));
-        Lunes.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        Lunes.setForeground(new java.awt.Color(255, 255, 255));
-        Lunes.setText("Lunes");
-        Lunes.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        Viernes.setBackground(new java.awt.Color(0, 102, 102));
-        Viernes.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        Viernes.setForeground(new java.awt.Color(255, 255, 255));
-        Viernes.setText("Viernes");
-        Viernes.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        Jueves.setBackground(new java.awt.Color(0, 102, 102));
-        Jueves.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        Jueves.setForeground(new java.awt.Color(255, 255, 255));
-        Jueves.setText("Jueves");
-        Jueves.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        Miercoles.setBackground(new java.awt.Color(0, 102, 102));
-        Miercoles.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        Miercoles.setForeground(new java.awt.Color(255, 255, 255));
-        Miercoles.setText("Miercoles");
-        Miercoles.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        Martes.setBackground(new java.awt.Color(0, 102, 102));
-        Martes.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        Martes.setForeground(new java.awt.Color(255, 255, 255));
-        Martes.setText("Martes");
-        Martes.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        Lunes6.setBackground(new java.awt.Color(204, 204, 204));
-        Lunes6.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        Lunes6.setForeground(new java.awt.Color(255, 255, 255));
-        Lunes6.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        Lunes5.setBackground(new java.awt.Color(204, 204, 204));
-        Lunes5.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        Lunes5.setForeground(new java.awt.Color(255, 255, 255));
-        Lunes5.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        Lunes4.setBackground(new java.awt.Color(204, 204, 204));
-        Lunes4.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        Lunes4.setForeground(new java.awt.Color(255, 255, 255));
-        Lunes4.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        Lunes3.setBackground(new java.awt.Color(204, 204, 204));
-        Lunes3.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        Lunes3.setForeground(new java.awt.Color(255, 255, 255));
-        Lunes3.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        Lunes2.setBackground(new java.awt.Color(204, 204, 204));
-        Lunes2.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        Lunes2.setForeground(new java.awt.Color(255, 255, 255));
-        Lunes2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        Lunes1.setBackground(new java.awt.Color(204, 204, 204));
-        Lunes1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        Lunes1.setForeground(new java.awt.Color(255, 255, 255));
-        Lunes1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        Horario6.setBackground(new java.awt.Color(0, 102, 102));
-        Horario6.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        Horario6.setForeground(new java.awt.Color(255, 255, 255));
-        Horario6.setText("13:00 - 14:00");
-        Horario6.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        Horario5.setBackground(new java.awt.Color(0, 102, 102));
-        Horario5.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        Horario5.setForeground(new java.awt.Color(255, 255, 255));
-        Horario5.setText("12:00 - 13:00");
-        Horario5.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        Horario4.setBackground(new java.awt.Color(0, 102, 102));
-        Horario4.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        Horario4.setForeground(new java.awt.Color(255, 255, 255));
-        Horario4.setText("11:00 - 12:00");
-        Horario4.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        Horario3.setBackground(new java.awt.Color(0, 102, 102));
-        Horario3.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        Horario3.setForeground(new java.awt.Color(255, 255, 255));
-        Horario3.setText("10:00 - 11:00");
-        Horario3.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        Horario2.setBackground(new java.awt.Color(0, 102, 102));
-        Horario2.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        Horario2.setForeground(new java.awt.Color(255, 255, 255));
-        Horario2.setText("9:00 - 10:00");
-        Horario2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        Horario1.setBackground(new java.awt.Color(0, 102, 102));
-        Horario1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        Horario1.setForeground(new java.awt.Color(255, 255, 255));
-        Horario1.setText("8:00 - 9:00");
-        Horario1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        Horario.setBackground(new java.awt.Color(0, 102, 102));
-        Horario.setFont(new java.awt.Font("Trebuchet MS", 1, 15)); // NOI18N
-        Horario.setForeground(new java.awt.Color(255, 255, 255));
-        Horario.setText("Horario");
-        Horario.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        Martes1.setBackground(new java.awt.Color(204, 204, 204));
-        Martes1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        Martes1.setForeground(new java.awt.Color(255, 255, 255));
-        Martes1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        Miercoles1.setBackground(new java.awt.Color(204, 204, 204));
-        Miercoles1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        Miercoles1.setForeground(new java.awt.Color(255, 255, 255));
-        Miercoles1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        Jueves1.setBackground(new java.awt.Color(204, 204, 204));
-        Jueves1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        Jueves1.setForeground(new java.awt.Color(255, 255, 255));
-        Jueves1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        Viernes1.setBackground(new java.awt.Color(204, 204, 204));
-        Viernes1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        Viernes1.setForeground(new java.awt.Color(255, 255, 255));
-        Viernes1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        Martes2.setBackground(new java.awt.Color(204, 204, 204));
-        Martes2.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        Martes2.setForeground(new java.awt.Color(255, 255, 255));
-        Martes2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        Miercoles2.setBackground(new java.awt.Color(204, 204, 204));
-        Miercoles2.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        Miercoles2.setForeground(new java.awt.Color(255, 255, 255));
-        Miercoles2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        Jueves2.setBackground(new java.awt.Color(204, 204, 204));
-        Jueves2.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        Jueves2.setForeground(new java.awt.Color(255, 255, 255));
-        Jueves2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        Viernes2.setBackground(new java.awt.Color(204, 204, 204));
-        Viernes2.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        Viernes2.setForeground(new java.awt.Color(255, 255, 255));
-        Viernes2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        Martes3.setBackground(new java.awt.Color(204, 204, 204));
-        Martes3.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        Martes3.setForeground(new java.awt.Color(255, 255, 255));
-        Martes3.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        Miercoles3.setBackground(new java.awt.Color(204, 204, 204));
-        Miercoles3.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        Miercoles3.setForeground(new java.awt.Color(255, 255, 255));
-        Miercoles3.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        Jueves3.setBackground(new java.awt.Color(204, 204, 204));
-        Jueves3.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        Jueves3.setForeground(new java.awt.Color(255, 255, 255));
-        Jueves3.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        Viernes3.setBackground(new java.awt.Color(204, 204, 204));
-        Viernes3.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        Viernes3.setForeground(new java.awt.Color(255, 255, 255));
-        Viernes3.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        Martes4.setBackground(new java.awt.Color(204, 204, 204));
-        Martes4.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        Martes4.setForeground(new java.awt.Color(255, 255, 255));
-        Martes4.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        Miercoles4.setBackground(new java.awt.Color(204, 204, 204));
-        Miercoles4.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        Miercoles4.setForeground(new java.awt.Color(255, 255, 255));
-        Miercoles4.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        Jueves4.setBackground(new java.awt.Color(204, 204, 204));
-        Jueves4.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        Jueves4.setForeground(new java.awt.Color(255, 255, 255));
-        Jueves4.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        Viernes4.setBackground(new java.awt.Color(204, 204, 204));
-        Viernes4.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        Viernes4.setForeground(new java.awt.Color(255, 255, 255));
-        Viernes4.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        Martes5.setBackground(new java.awt.Color(204, 204, 204));
-        Martes5.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        Martes5.setForeground(new java.awt.Color(255, 255, 255));
-        Martes5.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        Miercoles5.setBackground(new java.awt.Color(204, 204, 204));
-        Miercoles5.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        Miercoles5.setForeground(new java.awt.Color(255, 255, 255));
-        Miercoles5.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        Jueves5.setBackground(new java.awt.Color(204, 204, 204));
-        Jueves5.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        Jueves5.setForeground(new java.awt.Color(255, 255, 255));
-        Jueves5.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        Viernes5.setBackground(new java.awt.Color(204, 204, 204));
-        Viernes5.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        Viernes5.setForeground(new java.awt.Color(255, 255, 255));
-        Viernes5.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        Martes6.setBackground(new java.awt.Color(204, 204, 204));
-        Martes6.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        Martes6.setForeground(new java.awt.Color(255, 255, 255));
-        Martes6.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        Miercoles6.setBackground(new java.awt.Color(204, 204, 204));
-        Miercoles6.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        Miercoles6.setForeground(new java.awt.Color(255, 255, 255));
-        Miercoles6.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        Jueves6.setBackground(new java.awt.Color(204, 204, 204));
-        Jueves6.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        Jueves6.setForeground(new java.awt.Color(255, 255, 255));
-        Jueves6.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        Viernes6.setBackground(new java.awt.Color(204, 204, 204));
-        Viernes6.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        Viernes6.setForeground(new java.awt.Color(255, 255, 255));
-        Viernes6.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        javax.swing.GroupLayout TablaHorarioLayout = new javax.swing.GroupLayout(TablaHorario);
-        TablaHorario.setLayout(TablaHorarioLayout);
-        TablaHorarioLayout.setHorizontalGroup(
-            TablaHorarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TablaHorarioLayout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addGroup(TablaHorarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(TablaHorarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(TablaHorarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(TablaHorarioLayout.createSequentialGroup()
-                                .addGroup(TablaHorarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(Horario2, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Horario1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Horario, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(TablaHorarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(TablaHorarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(Lunes, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(Lunes1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(Lunes2, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(TablaHorarioLayout.createSequentialGroup()
-                                .addComponent(Horario3, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Lunes3, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(TablaHorarioLayout.createSequentialGroup()
-                            .addComponent(Horario4, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Lunes4, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(TablaHorarioLayout.createSequentialGroup()
-                        .addComponent(Horario5, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Lunes5, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(TablaHorarioLayout.createSequentialGroup()
-                        .addComponent(Horario6, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Lunes6, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(TablaHorarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(TablaHorarioLayout.createSequentialGroup()
-                        .addComponent(Martes, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Miercoles, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Jueves, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Viernes, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(TablaHorarioLayout.createSequentialGroup()
-                        .addComponent(Martes1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Miercoles1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Jueves1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Viernes1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(Martes2, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(TablaHorarioLayout.createSequentialGroup()
-                        .addGap(102, 102, 102)
-                        .addComponent(Miercoles2, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(TablaHorarioLayout.createSequentialGroup()
-                        .addGap(204, 204, 204)
-                        .addComponent(Jueves2, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(TablaHorarioLayout.createSequentialGroup()
-                        .addGap(306, 306, 306)
-                        .addComponent(Viernes2, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(Martes3, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(TablaHorarioLayout.createSequentialGroup()
-                        .addGap(102, 102, 102)
-                        .addComponent(Miercoles3, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(TablaHorarioLayout.createSequentialGroup()
-                        .addGap(204, 204, 204)
-                        .addComponent(Jueves3, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(TablaHorarioLayout.createSequentialGroup()
-                        .addGap(306, 306, 306)
-                        .addComponent(Viernes3, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(Martes4, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(TablaHorarioLayout.createSequentialGroup()
-                        .addGap(102, 102, 102)
-                        .addComponent(Miercoles4, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(TablaHorarioLayout.createSequentialGroup()
-                        .addGap(204, 204, 204)
-                        .addComponent(Jueves4, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(TablaHorarioLayout.createSequentialGroup()
-                        .addGap(306, 306, 306)
-                        .addComponent(Viernes4, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(Martes5, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(TablaHorarioLayout.createSequentialGroup()
-                        .addGap(102, 102, 102)
-                        .addComponent(Miercoles5, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(TablaHorarioLayout.createSequentialGroup()
-                        .addGap(204, 204, 204)
-                        .addComponent(Jueves5, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(TablaHorarioLayout.createSequentialGroup()
-                        .addGap(306, 306, 306)
-                        .addComponent(Viernes5, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(Martes6, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(TablaHorarioLayout.createSequentialGroup()
-                        .addGap(102, 102, 102)
-                        .addComponent(Miercoles6, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(TablaHorarioLayout.createSequentialGroup()
-                        .addGap(204, 204, 204)
-                        .addComponent(Jueves6, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(TablaHorarioLayout.createSequentialGroup()
-                        .addGap(306, 306, 306)
-                        .addComponent(Viernes6, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 57, Short.MAX_VALUE))
-        );
-        TablaHorarioLayout.setVerticalGroup(
-            TablaHorarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TablaHorarioLayout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addGroup(TablaHorarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Horario, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Martes, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Miercoles, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Viernes, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Jueves, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Lunes, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(TablaHorarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(TablaHorarioLayout.createSequentialGroup()
-                        .addComponent(Miercoles1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Miercoles2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Miercoles3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Miercoles4, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Miercoles5, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Miercoles6, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(TablaHorarioLayout.createSequentialGroup()
-                        .addComponent(Jueves1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Jueves2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Jueves3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Jueves4, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Jueves5, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Jueves6, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(TablaHorarioLayout.createSequentialGroup()
-                        .addComponent(Viernes1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Viernes2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Viernes3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Viernes4, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Viernes5, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Viernes6, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(TablaHorarioLayout.createSequentialGroup()
-                        .addGroup(TablaHorarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(TablaHorarioLayout.createSequentialGroup()
-                                .addGroup(TablaHorarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Martes1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Lunes1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(TablaHorarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Martes2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Lunes2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(TablaHorarioLayout.createSequentialGroup()
-                                .addComponent(Horario1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Horario2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(TablaHorarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(TablaHorarioLayout.createSequentialGroup()
-                                .addComponent(Martes3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Martes4, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(TablaHorarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(TablaHorarioLayout.createSequentialGroup()
-                                    .addComponent(Lunes3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(Lunes4, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(TablaHorarioLayout.createSequentialGroup()
-                                    .addComponent(Horario3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(Horario4, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(TablaHorarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(TablaHorarioLayout.createSequentialGroup()
-                                .addComponent(Martes5, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Martes6, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(TablaHorarioLayout.createSequentialGroup()
-                                .addGroup(TablaHorarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Lunes5, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Horario5, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(TablaHorarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Lunes6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Horario6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(31, Short.MAX_VALUE))
-        );
-
         lblNombre.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
 
         lblCedula.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-
-        LogoPaciente.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Documents\\MediMeetup\\src\\main\\resource\\Imagenes\\90.Paciente.jpg")); // NOI18N
 
         EspecialidadMedica.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         EspecialidadMedica.setText("Especialidad Medica");
 
         CBoxEspecialidad.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        CBoxEspecialidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        CBoxEspecialidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Neurologia", "Pediatria", "Medicina General", "Cardiologia", "Medicina Interna", "Ginecologia", "Psiquiatria" }));
 
         ConfirmarAgenda.setBackground(new java.awt.Color(102, 153, 255));
         ConfirmarAgenda.setFont(new java.awt.Font("Trebuchet MS", 1, 30)); // NOI18N
@@ -549,7 +92,6 @@ public class AgendarCita extends javax.swing.JInternalFrame {
             }
         });
 
-        btnRegresar.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Documents\\MediMeetup\\src\\main\\resource\\Imagenes\\48.FlechaR.png")); // NOI18N
         btnRegresar.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         btnRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -557,7 +99,6 @@ public class AgendarCita extends javax.swing.JInternalFrame {
             }
         });
 
-        btnSiguiente.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Documents\\MediMeetup\\src\\main\\resource\\Imagenes\\48.FlechaV.png")); // NOI18N
         btnSiguiente.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         btnSiguiente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -565,83 +106,109 @@ public class AgendarCita extends javax.swing.JInternalFrame {
             }
         });
 
+        Hora.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        Hora.setText("Hora");
+
+        EspecialidadMedica2.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        EspecialidadMedica2.setText("Cedula Paciente");
+
+        Hora1.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        Hora1.setText("Fecha");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGap(99, 99, 99)
-                                    .addComponent(AgendarCita, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                    .addContainerGap()
-                                    .addComponent(paciente, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(79, 79, 79)))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(EspecialidadMedica)
-                                .addComponent(CBoxEspecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(72, 72, 72)
-                        .addComponent(LogoPaciente))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(118, 118, 118)
-                        .addComponent(ConfirmarAgenda, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(180, 180, 180)
-                        .addComponent(lblNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(62, 62, 62)
-                        .addComponent(lblCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
-                        .addComponent(TablaHorario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(14, 14, 14))))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnSiguiente, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(86, 86, 86)
+                                        .addComponent(paciente, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(66, 66, 66)
+                                        .addComponent(AgendarCita, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(105, 105, 105)
+                                .addComponent(LogoPaciente))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(44, 44, 44)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Hora)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(EspecialidadMedica)
+                                        .addComponent(txtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(CBoxEspecialidad, 0, 231, Short.MAX_VALUE)
+                                        .addComponent(txtHora)
+                                        .addComponent(txtDia))
+                                    .addComponent(Hora1))))
+                        .addGap(180, 180, 180)
+                        .addComponent(lblNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(62, 62, 62)
+                        .addComponent(lblCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(116, 116, 116)
+                        .addComponent(ConfirmarAgenda, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(65, 65, 65)
+                    .addComponent(EspecialidadMedica2)
+                    .addContainerGap(723, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(LogoPaciente))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(47, 47, 47)
+                        .addComponent(AgendarCita, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(9, 9, 9)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(AgendarCita, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(paciente, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(105, 105, 105)
-                                .addComponent(EspecialidadMedica)
-                                .addGap(18, 18, 18)
-                                .addComponent(CBoxEspecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(73, 73, 73)
-                                .addComponent(ConfirmarAgenda, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblNombre, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(39, 39, 39)
-                                .addComponent(TablaHorario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(lblNombre, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(paciente, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(47, 47, 47)
+                        .addComponent(txtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(EspecialidadMedica)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(CBoxEspecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(8, 8, 8)
+                        .addComponent(Hora)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtHora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Hora1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(LogoPaciente))
+                .addGap(26, 26, 26)
+                .addComponent(ConfirmarAgenda, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnRegresar)
                         .addGap(19, 19, 19))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(btnSiguiente)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap(13, Short.MAX_VALUE))))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(87, 87, 87)
+                    .addComponent(EspecialidadMedica2)
+                    .addContainerGap(352, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -649,38 +216,46 @@ public class AgendarCita extends javax.swing.JInternalFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 383, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(656, 656, 656))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguienteActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btnSiguienteActionPerformed
+
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
-        this.dispose(); 
-        
+        this.dispose();
     }//GEN-LAST:event_btnRegresarActionPerformed
 
+
     private void ConfirmarAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmarAgendaActionPerformed
-        
-        //MENSAJE DE CONFIRMACION
-        
+        CitasControlador citasControlador = new CitasControlador();
+        PacienteControlador pacienteControlador = new PacienteControlador();
+        MedicoControlador medicoControlador = new MedicoControlador();
+        String cedula = txtCedula.getText();
+        String hora = txtHora.getText();
+        String dia = txtDia.getText();
+        String especialidad = CBoxEspecialidad.getSelectedItem().toString();
+        PacienteModelo pacienteModelo = new PacienteModelo();
+        // Establecer la cédula del paciente en el modelo
+        pacienteModelo.setCedula(cedula);
+        MedicoModelo medico= new MedicoModelo(especialidad);
+        CitasModelo citaModelo = new CitasModelo(0, cedula, hora, dia, especialidad);
+        citasControlador.IngresarCita(citaModelo, pacienteModelo, medico);
+        JOptionPane.showMessageDialog(null, "Cita creada con éxito");
+        //
         MenuPaciente ventanaMP = new MenuPaciente();
         escritorio.add(ventanaMP);
         ventanaMP.show();
     }//GEN-LAST:event_ConfirmarAgendaActionPerformed
-
-    private void btnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguienteActionPerformed
-        this.dispose();       
-    }//GEN-LAST:event_btnSiguienteActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -688,55 +263,18 @@ public class AgendarCita extends javax.swing.JInternalFrame {
     private javax.swing.JComboBox<String> CBoxEspecialidad;
     private javax.swing.JButton ConfirmarAgenda;
     private javax.swing.JLabel EspecialidadMedica;
-    private javax.swing.JButton Horario;
-    private javax.swing.JButton Horario1;
-    private javax.swing.JButton Horario2;
-    private javax.swing.JButton Horario3;
-    private javax.swing.JButton Horario4;
-    private javax.swing.JButton Horario5;
-    private javax.swing.JButton Horario6;
-    private javax.swing.JButton Jueves;
-    private javax.swing.JButton Jueves1;
-    private javax.swing.JButton Jueves2;
-    private javax.swing.JButton Jueves3;
-    private javax.swing.JButton Jueves4;
-    private javax.swing.JButton Jueves5;
-    private javax.swing.JButton Jueves6;
+    private javax.swing.JLabel EspecialidadMedica2;
+    private javax.swing.JLabel Hora;
+    private javax.swing.JLabel Hora1;
     private javax.swing.JLabel LogoPaciente;
-    private javax.swing.JButton Lunes;
-    private javax.swing.JButton Lunes1;
-    private javax.swing.JButton Lunes2;
-    private javax.swing.JButton Lunes3;
-    private javax.swing.JButton Lunes4;
-    private javax.swing.JButton Lunes5;
-    private javax.swing.JButton Lunes6;
-    private javax.swing.JButton Martes;
-    private javax.swing.JButton Martes1;
-    private javax.swing.JButton Martes2;
-    private javax.swing.JButton Martes3;
-    private javax.swing.JButton Martes4;
-    private javax.swing.JButton Martes5;
-    private javax.swing.JButton Martes6;
-    private javax.swing.JButton Miercoles;
-    private javax.swing.JButton Miercoles1;
-    private javax.swing.JButton Miercoles2;
-    private javax.swing.JButton Miercoles3;
-    private javax.swing.JButton Miercoles4;
-    private javax.swing.JButton Miercoles5;
-    private javax.swing.JButton Miercoles6;
-    private javax.swing.JPanel TablaHorario;
-    private javax.swing.JButton Viernes;
-    private javax.swing.JButton Viernes1;
-    private javax.swing.JButton Viernes2;
-    private javax.swing.JButton Viernes3;
-    private javax.swing.JButton Viernes4;
-    private javax.swing.JButton Viernes5;
-    private javax.swing.JButton Viernes6;
     private javax.swing.JButton btnRegresar;
     private javax.swing.JButton btnSiguiente;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblCedula;
     private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel paciente;
+    private javax.swing.JTextField txtCedula;
+    private javax.swing.JTextField txtDia;
+    private javax.swing.JTextField txtHora;
     // End of variables declaration//GEN-END:variables
 }

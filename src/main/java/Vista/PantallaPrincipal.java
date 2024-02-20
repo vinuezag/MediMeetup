@@ -131,7 +131,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
     private void btnPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPacienteActionPerformed
 
-    try {
+    try { 
         LoginPaciente ventanaLP = new LoginPaciente();
         escritorio.add(ventanaLP);
         ventanaLP.setVisible(true);

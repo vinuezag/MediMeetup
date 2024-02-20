@@ -22,7 +22,7 @@ public class UsuarioModelo extends PersonaModelo{
         this.pregunataseguridad = pregunataseguridad;
     }
 
-    public UsuarioModelo(String usuario, String clave, String pregunataseguridad, String nombre, int cedula, String apellido, String correoe, int celular, String tiposangre, String fechanacimiento, String dirreccion, String genero) {
+    public UsuarioModelo(String usuario, String clave, String pregunataseguridad, String nombre, String cedula, String apellido, String correoe, int celular, String tiposangre, String fechanacimiento, String dirreccion, String genero) {
         super(nombre, cedula, apellido, correoe, celular, tiposangre, fechanacimiento, dirreccion, genero);
         this.usuario = usuario;
         this.clave = clave;

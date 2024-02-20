@@ -10,7 +10,7 @@ package Modelo;
  */
 public class PersonaModelo {
     private String nombre;
-    private int cedula;
+    private String cedula;
     private String apellido;
     private String  correoe;
     private int celular;
@@ -22,7 +22,7 @@ public class PersonaModelo {
     public PersonaModelo() {
     }
 
-    public PersonaModelo(String nombre, int cedula, String apellido, String correoe, int celular, String tiposangre, String fechanacimiento, String dirreccion, String genero) {
+    public PersonaModelo(String nombre, String cedula, String apellido, String correoe, int celular, String tiposangre, String fechanacimiento, String dirreccion, String genero) {
         this.nombre = nombre;
         this.cedula = cedula;
         this.apellido = apellido;
@@ -42,11 +42,11 @@ public class PersonaModelo {
         this.nombre = nombre;
     }
 
-    public int getCedula() {
+    public String getCedula() {
         return cedula;
     }
 
-    public void setCedula(int cedula) {
+    public void setCedula(String cedula) {
         this.cedula = cedula;
     }
 

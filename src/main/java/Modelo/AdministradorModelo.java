@@ -18,10 +18,12 @@ public class AdministradorModelo extends PersonaModelo{
         this.idadministrador = idadministrador;
     }
 
-    public AdministradorModelo(int idadministrador, String nombre, int cedula, String apellido, String correoe, int celular, String tiposangre, String fechanacimiento, String dirreccion, String genero) {
+    public AdministradorModelo(int idadministrador, String nombre, String cedula, String apellido, String correoe, int celular, String tiposangre, String fechanacimiento, String dirreccion, String genero) {
         super(nombre, cedula, apellido, correoe, celular, tiposangre, fechanacimiento, dirreccion, genero);
         this.idadministrador = idadministrador;
     }
+
+    
 
     public int getIdadministrador() {
         return idadministrador;

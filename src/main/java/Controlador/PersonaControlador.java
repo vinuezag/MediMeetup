@@ -12,6 +12,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
+
 /**
  *
  * @author user
@@ -33,7 +34,9 @@ public class PersonaControlador {
 
     public void insertarPersona(PersonaModelo p) {
         try {
-            String sql = "call sp_Crearpersona('" + p.getNombre() + "','" + p.getApellido() + "','" + p.getCedula() + "','" + p.getCorreoe()+ "','" + p.getDirreccion()+ "');";
+            String sql = "call sp_Crearpersona('" + p.getCedula()+ "','" + p.getNombre()+ "','" 
+                    + p.getApellido()+ "','" + p.getCorreoe()+ "','"  + p.getCelular()+ "','" + p.getTiposangre()
+                    + p.getFechanacimiento()+ "','" + p.getDirreccion()+ "','" + p.getGenero()+ "');";
             ejecutar = (PreparedStatement) conectar.prepareCall(sql);
             var resultado = ejecutar.executeUpdate();
             if (resultado > 0) {
@@ -57,8 +60,8 @@ public class PersonaControlador {
             res = ejecutar.executeQuery();
             int cont = 1;
             while (res.next()) {
-                Object[] obpersona = new Object[6];
-                for (int i = 0; i < 6; i++) {
+                Object[] obpersona = new Object[9];
+                for (int i = 0; i < 9; i++) {
                     obpersona[i] = res.getObject(i+1);
                 }
                 obpersona[0]=cont;
@@ -69,7 +72,7 @@ public class PersonaControlador {
             return listaObject;
            
         } catch (SQLException e) {
-            System.out.println("ERROR SQL"+e);
+            System.out.println("ERROR SQL");
         }
         return null;
     }
@@ -83,8 +86,8 @@ public class PersonaControlador {
             res = ejecutar.executeQuery();
             int cont = 1;
             while (res.next()) {
-                Object[] obpersona = new Object[6];
-                for (int i = 1; i < 6; i++) {
+                Object[] obpersona = new Object[9];
+                for (int i = 1; i < 9; i++) {
                     obpersona[i] = res.getObject(i+1);
                 }
                 obpersona[0]=cont;
@@ -100,23 +103,6 @@ public class PersonaControlador {
         }
 
         return null;
-    }
-    public void actualizarPersona(PersonaModelo p) {
-        try {
-            String sql = "call sp_ActualizarPersona('" + p.getNombre() + "','" + p.getApellido() + "','" + p.getCedula() + "','" + p.getDirreccion()+ "','" + p.getCorreoe()+ "');";
-            ejecutar = (PreparedStatement) conectar.prepareCall(sql);
-            int resultado = ejecutar.executeUpdate();
-            if (resultado > 0) {
-                JOptionPane.showMessageDialog(null, "Persona Actualizada con Éxito");
-                System.out.println("PERSONA ACTUALIZADA CON ÉXITO");
-                ejecutar.close();
-            } else {
-                JOptionPane.showMessageDialog(null, "Revise los datos ingresados");
-                System.out.println("REVISE LOS DATOS INGRESADOS");
-            }
-        } catch (SQLException e) {
-            System.out.println("ERROR SQL");
-        }
     }
     public void eliminarPersona(int cedula) {
         try {

@@ -22,14 +22,18 @@ public class ConsultoriosModelo extends MedicoModelo {
         this.piso = piso;
     }
 
-    public ConsultoriosModelo(int idconsultorio, String lugar, String piso, int idmedico, String especialidad, String cargo, String fechainicio, String fechafin) {
+    public ConsultoriosModelo(int idconsultorio, String lugar, String piso, int idmedico, String especialidad, String cargo,
+            String fechainicio, String fechafin) {
         super(idmedico, especialidad, cargo, fechainicio, fechafin);
         this.idconsultorio = idconsultorio;
         this.lugar = lugar;
         this.piso = piso;
     }
 
-    public ConsultoriosModelo(int idconsultorio, String lugar, String piso, int idmedico, String especialidad, String cargo, String fechainicio, String fechafin, String nombre, int cedula, String apellido, String correoe, int celular, String tiposangre, String fechanacimiento, String dirreccion, String genero) {
+    public ConsultoriosModelo(int idconsultorio, String lugar, String piso, int idmedico, String especialidad, String cargo, 
+            String fechainicio, String fechafin, String nombre,
+         String cedula, String apellido, String correoe, int celular, String tiposangre, String fechanacimiento, String dirreccion, 
+         String genero) {
         super(idmedico, especialidad, cargo, fechainicio, fechafin, nombre, cedula, apellido, correoe, celular, tiposangre, fechanacimiento, dirreccion, genero);
         this.idconsultorio = idconsultorio;
         this.lugar = lugar;

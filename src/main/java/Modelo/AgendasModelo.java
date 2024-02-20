@@ -28,7 +28,8 @@ public class AgendasModelo extends MedicoModelo{
         this.viernes = viernes;
     }
 
-    public AgendasModelo(int idagenda, String lunes, String martes, String miercoles, String jueves, String viernes, int idmedico, String especialidad, String cargo, String fechainicio, String fechafin) {
+    public AgendasModelo(int idagenda, String lunes, String martes, String miercoles, String jueves, String viernes, 
+            int idmedico, String especialidad, String cargo, String fechainicio, String fechafin) {
         super(idmedico, especialidad, cargo, fechainicio, fechafin);
         this.idagenda = idagenda;
         this.lunes = lunes;
@@ -38,7 +39,10 @@ public class AgendasModelo extends MedicoModelo{
         this.viernes = viernes;
     }
 
-    public AgendasModelo(int idagenda, String lunes, String martes, String miercoles, String jueves, String viernes, int idmedico, String especialidad, String cargo, String fechainicio, String fechafin, String nombre, int cedula, String apellido, String correoe, int celular, String tiposangre, String fechanacimiento, String dirreccion, String genero) {
+    public AgendasModelo(int idagenda, String lunes, String martes, String miercoles, String jueves, String viernes, 
+            int idmedico, String especialidad, String cargo, String fechainicio, String fechafin, String nombre,
+            String cedula, String apellido, String correoe, int celular, String tiposangre, String fechanacimiento,
+            String dirreccion, String genero) {
         super(idmedico, especialidad, cargo, fechainicio, fechafin, nombre, cedula, apellido, correoe, celular, tiposangre, fechanacimiento, dirreccion, genero);
         this.idagenda = idagenda;
         this.lunes = lunes;

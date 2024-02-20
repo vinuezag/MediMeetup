@@ -18,6 +18,11 @@ public class MedicoModelo extends PersonaModelo{
     public MedicoModelo() {
     }
 
+    
+    public MedicoModelo(String especialidad) {
+        this.especialidad=especialidad;
+    }
+
     public MedicoModelo(int idmedico, String especialidad, String cargo, String fechainicio, String fechafin) {
         this.idmedico = idmedico;
         this.especialidad = especialidad;
@@ -26,7 +31,8 @@ public class MedicoModelo extends PersonaModelo{
         this.fechafin = fechafin;
     }
 
-    public MedicoModelo(int idmedico, String especialidad, String cargo, String fechainicio, String fechafin, String nombre, int cedula, String apellido, String correoe, int celular, String tiposangre, String fechanacimiento, String dirreccion, String genero) {
+    public MedicoModelo(int idmedico, String especialidad, String cargo, String fechainicio, String fechafin, String nombre,
+            String cedula, String apellido, String correoe, int celular, String tiposangre, String fechanacimiento, String dirreccion, String genero) {
         super(nombre, cedula, apellido, correoe, celular, tiposangre, fechanacimiento, dirreccion, genero);
         this.idmedico = idmedico;
         this.especialidad = especialidad;

@@ -24,7 +24,8 @@ public class PacienteModelo extends PersonaModelo{
         this.enfermedades = enfermedades;
     }
 
-    public PacienteModelo(int idpaciente, String alergias, String medicamentos, String enfermedades, String nombre, int cedula, String apellido, String correoe, int celular, String tiposangre, String fechanacimiento, String dirreccion, String genero) {
+    public PacienteModelo(int idpaciente, String alergias, String medicamentos, String enfermedades, String nombre,
+            String cedula, String apellido, String correoe, int celular, String tiposangre, String fechanacimiento, String dirreccion, String genero) {
         super(nombre, cedula, apellido, correoe, celular, tiposangre, fechanacimiento, dirreccion, genero);
         this.idpaciente = idpaciente;
         this.alergias = alergias;
