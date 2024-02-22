@@ -42,7 +42,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         escritorio.setBackground(new java.awt.Color(255, 255, 255));
 
         btnMedico.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        btnMedico.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Documents\\MediMeetup\\src\\main\\resource\\Imagenes\\128.Medico.png")); // NOI18N
+        btnMedico.setIcon(new javax.swing.ImageIcon("C:\\Users\\user\\Documents\\NetBeansProjects\\MediMeetup\\src\\main\\resource\\Imagenes\\128.Medico.png")); // NOI18N
         btnMedico.setText("MEDICO");
         btnMedico.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnMedico.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
@@ -53,7 +53,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         });
 
         btnPaciente.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        btnPaciente.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Documents\\MediMeetup\\src\\main\\resource\\Imagenes\\128.Paciente.png")); // NOI18N
+        btnPaciente.setIcon(new javax.swing.ImageIcon("C:\\Users\\user\\Documents\\NetBeansProjects\\MediMeetup\\src\\main\\resource\\Imagenes\\128.Paciente.png")); // NOI18N
         btnPaciente.setText("PACIENTE");
         btnPaciente.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnPaciente.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
@@ -63,10 +63,10 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        logoSistema.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Documents\\MediMeetup\\src\\main\\resource\\Imagenes\\nombreSistem.png")); // NOI18N
+        logoSistema.setIcon(new javax.swing.ImageIcon("C:\\Users\\user\\Documents\\NetBeansProjects\\MediMeetup\\src\\main\\resource\\Imagenes\\nombreSistem.png")); // NOI18N
 
         btnAdmin.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        btnAdmin.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Documents\\MediMeetup\\src\\main\\resource\\Imagenes\\128.Admin.jpg")); // NOI18N
+        btnAdmin.setIcon(new javax.swing.ImageIcon("C:\\Users\\user\\Documents\\NetBeansProjects\\MediMeetup\\src\\main\\resource\\Imagenes\\128.Admin.jpg")); // NOI18N
         btnAdmin.setText("Director del Hospital");
         btnAdmin.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnAdmin.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
@@ -86,30 +86,30 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         escritorioLayout.setHorizontalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, escritorioLayout.createSequentialGroup()
-                .addContainerGap(88, Short.MAX_VALUE)
+                .addContainerGap(183, Short.MAX_VALUE)
                 .addGroup(escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, escritorioLayout.createSequentialGroup()
                         .addComponent(logoSistema, javax.swing.GroupLayout.PREFERRED_SIZE, 828, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(64, 64, 64))
                     .addGroup(escritorioLayout.createSequentialGroup()
                         .addComponent(btnPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(45, 45, 45)
+                        .addGap(54, 54, 54)
                         .addComponent(btnMedico, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(40, 40, 40)
+                        .addGap(62, 62, 62)
                         .addComponent(btnAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         escritorioLayout.setVerticalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(escritorioLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
+                .addGap(87, 87, 87)
                 .addComponent(logoSistema, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44)
-                .addGroup(escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnMedico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnPaciente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addGap(97, 97, 97)
+                .addGroup(escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnMedico)
+                    .addComponent(btnAdmin)
+                    .addComponent(btnPaciente))
+                .addContainerGap(172, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -118,12 +118,14 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(escritorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(escritorio)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(escritorio)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(escritorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();

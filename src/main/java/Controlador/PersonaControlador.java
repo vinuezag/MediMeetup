@@ -65,6 +65,9 @@ public class PersonaControlador {
                 }
                 listaObject.add(obpersona);
             }
+            for (Object[] objects : listaObject) {
+                System.out.println("----------------"+objects);
+            }
             ejecutar.close();
             return listaObject;
            

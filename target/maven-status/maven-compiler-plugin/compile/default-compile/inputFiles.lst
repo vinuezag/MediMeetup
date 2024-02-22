@@ -19,6 +19,7 @@ C:\Users\user\Documents\NetBeansProjects\MediMeetup\src\main\java\Modelo\MedicoM
 C:\Users\user\Documents\NetBeansProjects\MediMeetup\src\main\java\Vista\BuscarCita.java
 C:\Users\user\Documents\NetBeansProjects\MediMeetup\src\main\java\Vista\MenuMedico.java
 C:\Users\user\Documents\NetBeansProjects\MediMeetup\src\main\java\Vista\ConsultarPaciente.java
+C:\Users\user\Documents\NetBeansProjects\MediMeetup\src\main\java\Vista\RecuperarClaveAdmi.java
 C:\Users\user\Documents\NetBeansProjects\MediMeetup\src\main\java\Vista\CancelarCita.java
 C:\Users\user\Documents\NetBeansProjects\MediMeetup\src\main\java\Modelo\AdministradorModelo.java
 C:\Users\user\Documents\NetBeansProjects\MediMeetup\src\main\java\Vista\ModificarInfoPacientes.java
@@ -30,6 +31,7 @@ C:\Users\user\Documents\NetBeansProjects\MediMeetup\src\main\java\Vista\MenuPaci
 C:\Users\user\Documents\NetBeansProjects\MediMeetup\src\main\java\Vista\DatosPaciente.java
 C:\Users\user\Documents\NetBeansProjects\MediMeetup\src\main\java\Modelo\CitasModelo.java
 C:\Users\user\Documents\NetBeansProjects\MediMeetup\src\main\java\Controlador\DiagnosticoControlador.java
+C:\Users\user\Documents\NetBeansProjects\MediMeetup\src\main\java\Modelo\Pdf.java
 C:\Users\user\Documents\NetBeansProjects\MediMeetup\src\main\java\Modelo\UsuarioModelo.java
 C:\Users\user\Documents\NetBeansProjects\MediMeetup\src\main\java\Vista\EliminarMedico.java
 C:\Users\user\Documents\NetBeansProjects\MediMeetup\src\main\java\Vista\AgendarCita.java

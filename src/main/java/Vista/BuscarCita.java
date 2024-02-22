@@ -199,7 +199,7 @@ ArrayList<PacienteModelo> listaPersonaModel = new ArrayList<>();
                                 .addComponent(lblCedula1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(40, 40, 40)
                 .addComponent(TablaHorario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(196, 196, 196)
+                .addGap(76, 76, 76)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnRegresar)
                     .addComponent(btnSiguiente))
@@ -215,7 +215,7 @@ ArrayList<PacienteModelo> listaPersonaModel = new ArrayList<>();
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 6, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -247,6 +247,7 @@ ArrayList<PacienteModelo> listaPersonaModel = new ArrayList<>();
 
     if (listaFilas != null && !listaFilas.isEmpty()) {
         for (Object[] fila : listaFilas) {
+            System.out.println("+++++++++"+fila);
             modelo.addRow(fila);
         }
     } else {

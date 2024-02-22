@@ -78,15 +78,15 @@ public class PacienteControlador {
         String sql = "call sp_MostrarCitaPorCedula('%"+cedula+"%');";
         ejecutar = (PreparedStatement) conectar.prepareCall(sql);
         res = ejecutar.executeQuery();
-        int cont = 1;
+        //int cont = 1;
         while (res.next()) {
-            Object[] obpersona = new Object[7];
-            for (int i = 0; i < 7; i++) {
+            Object[] obpersona = new Object[6];
+            for (int i = 0; i < 6; i++) {
                 obpersona[i] = res.getObject(i+1);
             }
-            obpersona[6] = cont;
+            //obpersona[6] = cont;
             listaObject.add(obpersona);
-            cont++;
+            //cont++;
         }
         ejecutar.close();
         return listaObject;
